@@ -1,0 +1,42 @@
+@import "demo.css";
+
+
+body{
+    background-color: #113822;
+    text-align: center;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;    
+    font-weight: normal;
+    color: white;
+    font-size: 24px;
+    margin-top: 200px;
+    
+}
+
+
+label{
+    font-family: 'Montserrat', sans-serif;    
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.linha{
+    font-family: 'Montserrat', sans-serif;    
+    outline: 0;
+    border: 0;
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    color: white
+;   border-bottom: 2px solid rgb(200, 200, 200);
+    background-color: #113822;
+}
+.n01{
+    text-align: start;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 20000px;
+}
