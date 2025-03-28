@@ -1,0 +1,30 @@
+/* Estilos básicos para o container e a caixa */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    overflow: hidden; /* Garante que o conteúdo não saia da tela durante a animação */
+  }
+  
+  .caixa {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    transform: translateY(-100%); /* Inicialmente fora da tela (acima) */
+    opacity: 0; /* Inicialmente invisível */
+    transition: transform 1s ease, opacity 1s ease;
+  }
+  
+  /* Estilo de animação para mostrar a caixa */
+  .caixa.aparecer {
+    transform: translateY(0); /* Move a caixa para o lugar */
+    opacity: 1; /* Torna a caixa visível */
+  }
+  

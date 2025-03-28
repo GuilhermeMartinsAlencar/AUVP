@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Exemplo</title>
+    <style>
+        .erro {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulário de Contato</h2>
+
+    <form id="formulario" onsubmit="return validarFormulario()">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <div id="erroNome" class="erro"></div>
+        </div>
+        
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <div id="erroEmail" class="erro"></div>
+        </div>
+        
+        <div>
+            <label for="mensagem">Mensagem:</label>
+            <input type="text" id="mensagem" name="mensagem">
+            <div id="erroMensagem" class="erro"></div>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            let valido = true;
+
+            // Limpa as mensagens de erro
+            document.getElementById("erroNome").innerHTML = "";
+            document.getElementById("erroEmail").innerHTML = "";
+            document.getElementById("erroMensagem").innerHTML = "";
+
+            // Validação para o campo "Nome"https://open.spotify.com/track/2nGFzvICaeEWjIrBrL2RAx
+            const nome = document.getElementById("nome").value;
+            if (nome === "") {
+                document.getElementById("erroNome").innerHTML = "Por favor, preencha o nome.";
+                valido = false;
+            }
+
+            // Validação para o campo "Email"
+            const email = document.getElementById("email").value;
+            if (email === "") {
+                document.getElementById("erroEmail").innerHTML = "Por favor, preencha o email.";
+                valido = false;
+            }
+
+            // Validação para o campo "Mensagem"
+            const mensagem = document.getElementById("mensagem").value;
+            if (mensagem === "") {
+                document.getElementById("erroMensagem").innerHTML = "Por favor, preencha a mensagem.";
+                valido = false;
+            }
+
+            // Retorna se o formulário for válido ou não
+            return valido;
+        }
+    </script>
+
+</body>
+</html>
