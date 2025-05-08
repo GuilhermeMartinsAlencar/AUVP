@@ -1,31 +1,31 @@
 
+let lastScrollTop = 0;
+let arrumar = true
+let currentSection = 0;
 
 
 
-window.addEventListener('wheel', (event) => {
-        
 
+window.addEventListener("scroll", function () {
+    let scrollTop = scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
 
-let valido = true;
+        let valido = true;
+        const n01 = document.getElementsByClassName("n01")
         const nome = document.getElementById("first_name").value;
-        const campo = document.getElementById("erroNome");
+        const campo =  document.getElementById("erroNome")
         const campo01 = document.getElementById("errosobreNome");
         const sobrenome = document.getElementById("last_name").value;
         const telefone = document.getElementById("phone").value;
         const campo02 = document.getElementById("telefone");
-        const email = document.getElementById("email").value;
+        const email = document.getElementById("email").value; 
         const campo03 = document.getElementById("erroEmail");
 
-
-
-        
-        
-
-
+      
         if (nome === "") {
-            campo.style.display = 'block'
-            document.getElementById("erroNome").innerHTML = "\u26A0 Preencha este campo";
-            valido = false;
+        campo.style.display = 'block'
+        campo.innerHTML = "\u26A0 Preencha este campo";
+            
         }
         if (sobrenome === "") {
             campo01.style.display = "block"
@@ -41,24 +41,61 @@ let valido = true;
             campo03.style.display = "block"
 
             document.getElementById("erroEmail").innerHTML = "\u26A0 Preencha este campo";
-        }
+        }   
+        if (nome === "" || sobrenome === "" || telefone === "" || email === "") {
+            document.getElementById('nx3').style.display = "none";       
+            document.body.style.overflow = "auto";
+        }  
+    
+    
+    }
+        
+    lastScrollTop = scrollTop;
+}); 
 
-    })
-
-
-
-
-//if ('scrollRestoration' in history) {
-//  history.scrollRestoration = 'manual';
-//}
-
-//window.onload = function () {
-//  window.scrollTo(0, 0);
-//};
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    let currentSection = 0;
+    if (arrumar === true) {
+        // Seleciona todos os campos que devem ativar o evento
+        const camposInput = document.querySelectorAll("#first_name, #last_name, #telefone, #email");
+
+        camposInput.forEach(campo => {
+            campo.addEventListener("input", function() {
+                document.getElementById("erroNome").style.display = 'none';
+                document.getElementById("errosobreNome").style.display = "none";
+                document.getElementById("telefone").style.display = "none";
+                document.getElementById("erroEmail").style.display = "none";
+                
+                document.body.style.overflow = "hidden";
+                document.getElementById('nx3').style.display = "block";     
+                if (currentSection = 1){
+                    currentSection = 0;
+                }  
+             
+
+            });
+        });
+    }
+});
+
+
+
+
+//   ROLAGEM COM PAUSA E BOTAO DE ROLAGEM E  // 
+
+
+
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.onload = function () {
+  window.scrollTo(0, 0);
+};
+
+
+document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll('.container');
 
     console.log("Seções encontradas:", sections);
@@ -68,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener('wheel', (event) => {
         
-
 
 
 
@@ -93,7 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1500); // Tempo de bloqueio da rolagem
     });
 
+    document.addEventListener('keydown', function() {
+        if (currentSection < totalSections - 1) {
+            currentSection++;
+        }
 
+        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+    })
 
     document.getElementById("btndwon").addEventListener("click", (event) => {
 
@@ -122,6 +164,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// ROLAR  A TELA AO CLICAR O ENTER
+/*
+const totalSections = document.querySelectorAll('.section').length;
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    console.log("olaa")
+    // Avança para a próxima seção (se existir)
+    if (currentSection < totalSections - 1) {
+      currentSection++;
+      const offset = currentSection * window.innerHeight;
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+      });
+    }
+  }
+});*/
 
 
 
@@ -135,7 +195,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// TAG NUMERO 3
 
+
+
+function getElementOnClickUl(event) {
+
+    let ultimoBotao = null;  // Guarda o último botão clicado
+    let blinkEffect = null;  // Guarda o intervalo do piscar
+    const caixinha = event.target.closest('span');
+
+ caixinha.style.backgroundColor = "white"
+    caixinha.style.color = "#294C39"
+    // Procura o ancestral <li> mais próximo a partir do alvo clicado
+    const li = event.target.closest('li');
+
+    if (ultimoBotao && ultimoBotao !== li) {
+        clearInterval(blinkEffect);  // para o piscar antigo
+        ultimoBotao.style.backgroundColor = "#294C39";  // cor de fundo padrão
+        ultimoBotao.style.color = "white";            // cor do texto padrão
+      }
+
+    // Se não encontrar uma <li> ou se o clique for no <ul> diretamente, não faz nada
+    if (!li || li.tagName.toLowerCase() === 'ul') return;
+
+    // Seleciona o checkbox dentro da <li> (ou outro seletor, se necessário)
+    let checkbox = li.querySelector("input[type='checkbox']");
+   
+    if (checkbox) {
+        // Inverte o estado do checkbox
+        checkbox.checked = !checkbox.checked;
+    }
+   
+    let colors = ["#597465","#294C39"];
+    let i = 0;
+
+  blinkEffect = setInterval(() => {
+    li.style.backgroundColor = colors[i % colors.length];
+    i++;
+  }, 80);  // Pisca a cada 90ms
+
+  // Para o efeito após 800ms e define cor final
+  setTimeout(() => {
+    clearInterval(blinkEffect);
+    li.style.backgroundColor = "#597465";  // cor final
+    li.style.color = "#597465";     
+  }, 800);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+// BOTAO PARA GERAR AS LI NO INPUT DA QUESTAO 5 E 6
 
 
 
@@ -158,17 +277,41 @@ function cetinha01() {
     }
     toggle = !toggle;
 }
+
+
 function selectOption(event) {
     let botao = document.getElementById("buttonceta");
-    let imagem = document.getElementById("Butaoceta01")
-    const selectedText = event.target.textContent;  // Pega o texto do item clicado
-    document.getElementById('00NU4000000sMef').value = selectedText;  // Atribui ao campo de input
-    document.getElementById('opçoesesta').style.display = 'none';  // Fecha a lista de opções
-    imagem.src = "xtransparente.xcf"
+    let opcoes = document.getElementById('opçoesesta');
+    let opçaoli = document.getElementById('opçaoli')
+    const selectedText = event.target.textContent;  
+    const selectedItem = event.target
+
+    
+
+    // Atribui o texto ao campo de input  
+    document.getElementById('00NU4000000sMef').value = selectedText;  
+
+    // Faz a lista piscar antes de desaparecer
+    let colors = ["#597465", "#113822", "#597465", "#113822"];
+    let i = 0;
+    
+    let blinkEffect = setInterval(() => {
+        selectedItem.style.backgroundColor = colors[i % colors.length];
+        i++;
+    }, 90);  // Muda de cor a cada 300ms
+
+    
+    // Para o efeito e esconde após 2 segundos
+    setTimeout(() => {
+        clearInterval(blinkEffect);  // Para o piscar
+        opcoes.style.display = 'none';  // Esconde o elemento
+        selectedItem.style.backgroundColor = "";  // Reseta a cor
+    }, 1000);  
+
     botao.setAttribute("onclick", "apagarSelecao01()");
 }
 
-
+                                                                                                                                                                                                                                                                
 
 function apagarSelecao01() {
     let input = document.getElementById("00NU4000000sMef");
@@ -204,12 +347,33 @@ function cetinha02() {
 }
 function selectOption01(event) {
     let botao = document.getElementById("buttaoceta02");
-    let imagem = document.getElementById("Butaoceta02")
-    const selectedText01 = event.target.textContent;  // Pega o texto do item clicado
-    document.getElementById('00NU4000000sMmj').value = selectedText01;  // Atribui ao campo de input
-    document.getElementById('opçoesregime').style.display = 'none';  // Fecha a lista de opções
+    let opcoes = document.getElementById('opçoesregime');
+    const selectedText = event.target.textContent;  
+    const selectedItem = event.target
 
+    
+
+    // Atribui o texto ao campo de input  
+    document.getElementById('00NU4000000sMmj').value = selectedText;  
+
+    // Faz a lista piscar antes de desaparecer
+    let colors = ["#597465", "#113822", "#597465", "#113822"];
+    let i = 0;
+    
+    let blinkEffect = setInterval(() => {
+        selectedItem.style.backgroundColor = colors[i % colors.length];
+        i++;
+    }, 90);  // Muda de cor a cada 300ms
+
+    
+    // Para o efeito e esconde após 2 segundos
+    setTimeout(() => {
+        clearInterval(blinkEffect);  // Para o piscar
+        opcoes.style.display = 'none';  // Esconde o elemento
+        selectedItem.style.backgroundColor = "";  // Reseta a cor
+    }, 1000);  
     botao.setAttribute("onclick", "apagarSelecao02()");
+
 }
 
 function apagarSelecao02() {
@@ -223,15 +387,31 @@ function apagarSelecao02() {
     let imagem = document.getElementById("Butaoceta02")
     toggle = !toggle
     botao.setAttribute("onclick", "cetinha02()"); // Restaura o clique original
+   
 
 
 
 }
 
 
+// TAG NUMERO 8 DE PULAR LINHA AO SEGURA SHIFT + ENTER
 
+document.addEventListener('DOMContentLoaded', () => {
+    const textarea = document.getElementById('00NU4000000sMrZ');
 
+    textarea.addEventListener('input', function () {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    });
 
+    textarea.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        console.log('Enter bloqueado.');
+      }
+    });
+  });
+  
 
 
 
@@ -239,79 +419,112 @@ function apagarSelecao02() {
 
 
 
+// BUTOES DE NOTA ANIMAÇAO DE PISCAR
 
 
+let ultimoBotao = null;  // Guarda o último botão clicado
+let blinkEffect = null;  // Guarda o intervalo do piscar
+let tempo = null;
 
+function efeitopiscar(event) {
+  const selectedItem = event.target;
 
+  // Se clicou em outro botão, reseta o anterior
+  if (ultimoBotao && ultimoBotao !== selectedItem) {
+    clearInterval(blinkEffect);  // para o piscar antigo
+    ultimoBotao.style.backgroundColor = "#294C39";  // cor de fundo padrão
+    ultimoBotao.style.color = "white";            // cor do texto padrão
+  }
 
+  let colors = ["#597465","white"];
+  let i = 0;
 
+  blinkEffect = setInterval(() => {
+    selectedItem.style.backgroundColor = colors[i % colors.length];
+    i++;
+  }, 80);  // Pisca a cada 90ms
 
+  // Para o efeito após 800ms e define cor final
+  setTimeout(() => {
+    clearInterval(blinkEffect);
+    selectedItem.style.backgroundColor = "white";  // cor final
+    selectedItem.style.color = "#597465";              // cor do texto
+  }, 800);
 
+  ultimoBotao = selectedItem;  // atualiza o último botão clicado
+  const sections = document.querySelectorAll('.container');
 
+  console.log("Seções encontradas:", sections);
 
+  const totalSections = sections.length;
 
+  setTimeout(() => {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function getElementOnClickUl(event) {
-    // Procura o ancestral <li> mais próximo a partir do alvo clicado
-    let li = event.target.closest('li');
-
-    // Se não encontrar uma <li> ou se o clique for no <ul> diretamente, não faz nada
-    if (!li || li.tagName.toLowerCase() === 'ul') return;
-
-    // Seleciona o checkbox dentro da <li> (ou outro seletor, se necessário)
-    let checkbox = li.querySelector("input[type='checkbox']");
-
-    if (checkbox) {
-        // Inverte o estado do checkbox
-        checkbox.checked = !checkbox.checked;
+    if (currentSection < totalSections - 1) {
+        currentSection++;
     }
+
+    sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+
+
+
+
+
+}, 1000);
 }
 
+    
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+*/

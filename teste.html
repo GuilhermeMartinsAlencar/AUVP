@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll com Enter</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    .section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: white;
+    }
+    .section:nth-child(1) { background: #3498db; }
+    .section:nth-child(2) { background: #e74c3c; }
+    .section:nth-child(3) { background: #2ecc71; }
+    .section:nth-child(4) { background: #9b59b6; }
+  </style>
+</head>
+<body>
+
+  <div class="section">Seção 1</div>
+  <div class="section">Seção 2</div>
+  <div class="section">Seção 3</div>
+  <div class="section">Seção 4</div>
+
+  <script>
+    let currentSection = 0;
+    const totalSections = document.querySelectorAll('.section').length;
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        // Avança para a próxima seção (se existir)
+        if (currentSection < totalSections - 1) {
+          currentSection++;
+          const offset = currentSection * window.innerHeight;
+          window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

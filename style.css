@@ -9,11 +9,11 @@
 
 
 body {
-    height: 100%;
     scroll-behavior: smooth;
     background-color: #113822;
     color: white;
-    overflow: hidden;
+
+
 
 }
 
@@ -126,11 +126,6 @@ input {
     justify-content: center;
 }
 
-
-
-
-
-
 .n01 {
     width: 36%;
     height: 100vh;
@@ -155,24 +150,37 @@ input {
 }
 
 
+.p01{
+    margin-top: 40px;
+}
 
 
 
 
 
+#DDD{
+    margin-left: 15px;
+    height: 54px;
+    width: 27px;
+    background-color: #113822;
+    color: white;
+    font-size: 22px;
+    transform: rotate(90deg);
+    border: none;
+    border-right: 1px solid #597465;
+    text-align: left;
+    
+}
+#phone{
+    width: 88%;
+    position: absolute;
+    right: 0;
+    
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.telefone-box{
+    height: 40px;
+}
 
 
 
@@ -211,6 +219,7 @@ label {
 .alinhar {
     width: 100%;
     padding-bottom: 48px;
+    
 }
 
 .alinhartele {
@@ -360,6 +369,10 @@ span p {
     cursor: pointer;
     padding-top: 3px;
     font-family: sans-serif;
+    border-radius: 2px;
+    text-align: center;
+    
+
 
 
 
@@ -488,6 +501,7 @@ input[type="checkbox"]:checked::after {
 .estado li:hover {
     background-color: #597465;
 }
+
 
 #buttonceta {
     position: absolute;
@@ -697,7 +711,7 @@ hr {
     text-align: start;
 }
 
-.experiencia input {
+.experiencia textarea {
     font-family: 'Montserrat', sans-serif;
     outline: 0;
     border: 0;
@@ -706,8 +720,20 @@ hr {
     color: white;
     border-bottom: 1px solid #597465;
     background-color: #113822;
-    margin-top: 28px;
+    margin-top: 18px;
     margin-bottom: 15px;
+    height: 32px;
+    resize: none;
+    overflow: hidden;
+}
+textarea::placeholder {
+    color: #51675a;
+    font-size: 24px;
+    text-align: left;
+
+
+
+    /* Controla a transparência */
 }
 
 .experiencia p {
@@ -760,7 +786,7 @@ hr {
 }
 
 #endereço input::placeholder {
-    color: #51675a;
+    color: #516E5D;
     font-size: 22px;
     text-align: left;
 
@@ -818,11 +844,21 @@ input::placeholder {
     text-align: start;
     margin-top: 200px;
     height: 100vh;
+    
 }
+
+
+
+
 
 .nota input {
     display: none;
 }
+
+
+
+
+
 
 .butaonota {
     width: 120px;
@@ -836,12 +872,16 @@ input::placeholder {
     font-size: 20px;
     margin-top: 22px;
     margin-bottom: 26px;
-
+    transition: background-color 0.3s;
+    cursor: pointer;
+    
 }
 
-.butaonota:hover {
+  
+  .butaonota:hover {
     background-color: #597465;
-}
+  }
+
 
 .investidohoje {
     color: white;
@@ -917,5 +957,9 @@ input::placeholder {
 
 
 .investidohoje select {
+    display: none;
+}
+
+#hidden-form {
     display: none;
 }
