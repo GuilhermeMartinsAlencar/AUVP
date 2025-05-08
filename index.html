@@ -3,21 +3,32 @@
 <!--  If necessary, please modify the charset parameter to specify the        -->
 <!--  character set of your HTML page.                                        -->
 <!--  ----------------------------------------------------------------------  -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUVP CAPITAL</title>
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
+<script src="teste01.js"></script>
 
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
-<!--   <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DHa000002Cy8v" method="POST"> -->
+<!-- 
+ -->   <!-- <form  action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DHa000002Cy8v" method="POST" id="form"> -->
 
-       <input type=hidden name="oid" value="00DHa000002Cy8v">
-    <input type=hidden name="retURL" value="https://www.auvpcapital.com.br/"> 
+<input type=hidden name="oid" value="00DHa000002Cy8v">
+<input type=hidden name="retURL" value="https://www.auvpcapital.com.br/"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">    
 
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
@@ -26,435 +37,495 @@
 <!--  <input type="hidden" name="debugEmail"                                  -->
 <!--  value="caue@asupernova.com.br">                                         -->
 <!--  ----------------------------------------------------------------------  -->
-
+</head>
 <body>
 
+       
+    <div class="imgauvp"></div>
+
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
     <div id="homearrowbutton">
-        <button class="button01" id="btnCima">
+        <button class="button01" id="btnCima" type="button">
             &#10095;
         </button>
-        <button class="button02" id="btndwon" onclick="mostrarAlerta()">
+        <button class="button02" id="btndwon" onclick="mostrarAlerta()" type="button">
             &#10095;
         </button>
     </div>
+   
+   
+    <form action="" id="form">
+        <section class="container n01 input-group">
+            <div class="wrapper">
+                <span class="number">1 🡢</span>
+                <h1>Complete seus dados para ser contatado por um especialista em investimentos.</h1>
 
-
-
-    <section class="container n01">
-        <div class="wrapper">
-            <span class="number">1 🡢</span>
-            <h1>Complete seus dados para ser contatado por um especialista em investimentos.</h1>
-    
-            <div class="alinhar">
-                <label for="first_name">Nome *</label>
-                <input id="first_name" maxlength="40" name="first_name" type="text" autocomplete="off" placeholder="José">
-                <div id="erroNome" class="erro"></div>
-            </div>
-    
-            <div class="alinhar">
-                <label for="last_name">Sobrenome *</label>
-                <input id="last_name" maxlength="80" name="last_name" type="text" autocomplete="off" placeholder="Silva">
-                <div id="errosobreNome" class="erro"></div>
-            </div>
-    
-            <div class="alinhar telefone-container">
-                <label for="phone">Telefone *</label>
-                <div class="telefone-box">
-                    <button id="DDD" class="telefone">&#10095;</button>
-                    <input id="phone" maxlength="40" name="phone" type="text" autocomplete="off"
-                        placeholder="(11) 96123-4567" class="telefone">
+                
+                <div class="alinhar">
+                    <label for="first_name">Nome *</label>
+                    <input id="first_name" maxlength="40" name="first_name" type="text" autocomplete="off" placeholder="José">
+                    <div id="erroNome" class="erro"></div>
                 </div>
-                <div id="telefone" class="erro"></div>
-            </div>
-    
-            <div class="alinhartele">
-                <label for="email">E-mail *</label>
-                <input id="email" maxlength="80" name="email" type="text" autocomplete="off"
-                    placeholder="alguem@exemplo.com">
-                <div id="erroEmail" class="erro"></div>
-            </div>
-    
-            <p class="p01">
-                <button class="butonok">OK</button> carrega em <strong>Enter</strong> ↵
-            </p>
-        </div>
-    </section>
-    
+        
+                <div class="alinhar">
+                    <label for="last_name">Sobrenome *</label>
+                    <input id="last_name" maxlength="80" name="last_name" type="text" autocomplete="off" placeholder="Silva">
+                    <div id="errosobreNome" class="erro"></div>
+                </div>
+        <div>
+            
 
-    <div id="nx3">
-        <section class="container optar">
-            <span>
-                <p>Você pode optar por não responder às perguntas a seguir, elas são de natureza pessoal e nos auxiliam
-                    a
-                    selecionar o consultor mais adequado ao seu perfil.</p>
-            </span>
-            <span>
-                <p>Todas as informações fornecidas são tratadas com total sigilo e serão acessadas exclusivamente pelo
-                    consultor
-                    designado para o seu atendimento.</p>
-            </span>
-            <span>
-                <p><strong>Nenhuma outra pessoa terá acesso a essas respostas.</strong> </p>
-            </span>
-            <span>
-                <p><strong>Para pular, é só ignorar e clicar em avançar.</strong></p>
-            </span>
-            <p style="font-size: 12px; color: white; font-family: sans-serif;"><button
-                    class="continuarbutton">Continuar</button> carrega
-                em <strong>Enter</strong> ↵
-            </p>
+           
+            
+        </div>
+                <div class="alinhar">
+                    <label for="phone">Telefone *</label>
+                    <div class="telefone-box">
+                        <div class="wrapper">
+                            <input type="text" id="phone" placeholder="Enter phone number" />
+                           <!--  <button id="DDD" class="telefone" type="button" onclick="numberlistcountry()">
+                                <span>&#10095;</span>
+
+                                <img src="" alt="" id="imgDDi">
+                            </button>
+                            <ul class="numberlist" id="number-list">
+                                <input type="text" placeholder="Pesquise Países">
+                            </ul>
+                        </div>
+                        <input id="phone" maxlength="40" name="phone" type="text" autocomplete="off"
+                            placeholder="(11) 96123-4567" class="telefone"> -->
+                    </div>
+                    <div id="telefone" class="erro"></div>
+                </div>
+        
+                <div class="alinhartele">
+                    <label for="email">E-mail *</label>
+                    <input id="email" maxlength="80" name="email" type="text" autocomplete="off"
+                        placeholder="alguem@exemplo.com">
+                    <div id="erroEmail" class="erro"></div>
+                </div>
+        
+                <p class="p01">
+                    <button class="butonok" type="button">OK</button> carrega em <strong>Enter</strong> ↵
+                </p>
+            </div>
         </section>
-        </svg>
-        </span>
-        <div class="container" id="bebida">
-            <div class="wrapper">
-                <span class="number2">2 🡢</span>
-                <br> Qual a sua bebida favorita?<input class="inputbebida" id="00NU4000000sKXL" name="00NU4000000sKXL"
-                    rows="5" type="text" wrap="soft" placeholder="Responde aqui..." autocomplete="off"> <br>
-                <span style="font-size: 12px; color: white; font-family: sans-serif;" class="okalinhar"><button
-                        class="butonok" id="butonscrolok">OK</button> carrega
-                    em <strong>Enter</strong>
-                    ↵</span>
-            </div>
-        </div>
-        <div class="container" id="interesse">
-            <div class="wrapper">
-                <span class="number">3 🡢</span>
-                Você tem interesse em alguma dessas atividades?
-                <ul class="pad" onclick="getElementOnClickUl(event)">
-                    <li class="caixaselecionar" for="checkbox">
-                        <span for="checkbox" class="labelA">A</span>
-                        <label for="checkbox" class="label02" id="labeltext">Eventos para empresários
-                            <input id="checkbox" type="checkbox" value="true">
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label class="label01">
-                            <span class="labelA">B</span>
-                            <label class="label02" id="labeltext">Shows e Teatro
-                                <input id="checkbox01" type="checkbox" value="true"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox02" class="labelA">C</label>
-                            <label for="checkbox02" class="label02" id="labeltext">Viagens Nacionais
-                                <input id="checkbox02" type="checkbox"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox03" class="labelA">D</label>
-                            <label for="checkbox03" class="label02" id="labeltext">Viagens internacionais
-                                <input id="checkbox03" type="checkbox"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox04" class="labelA">E</label>
-                            <label for="checkbox04" class="label02" id="labeltext">Queijos e vinhos
-                                <input id="checkbox04" type="checkbox">
-                            </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox05" class="labelA">F</label>
-                            <label for="checkbox05" class="label02" id="labeltext"> Charutos
-                                <input id="checkbox05" type="checkbox"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox06" class="labelA">G</label>
-                            <label for="checkbox06" class="label02" id="labeltext">Confrarias de uísque
-                                <input id="checkbox06" type="checkbox"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox07" class="labelA">H</label>
-                            <label for="checkbox07" class="label02" id="labeltext">Tênis</label>
-                            <input id="checkbox07" type="checkbox"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox08" class="labelA">I</label>
-                            <label for="checkbox08" class="label02" id="labeltext"></label>Golf
-                            <input id="checkbox08" type="checkbox"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox09" class="labelA">J</label>
-                            <label for="checkbox09" class="label02" id="labeltext">Hipismo
-                                <input id="checkbox09" type="checkbox"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox10" class="labelA">K</label>
-                            <label for="checkbox10" class="label02" id="labeltext"> Roteiros românticos
-                                <input id="checkbox10" type="checkbox"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox11" class="labelA">L</label>
-                            <label for="checkbox11" class="label02" id="labeltext">Futebol
-                                <input id="checkbox11" type="checkbox"></label>
-                        </label>
-                    </li>
-                    <li class="caixaselecionar" for="checkbox12">
-                        <label for="checkbox" class="label01">
-                            <label for="checkbox12" class="labelA">M</label>
-                            <label for="checkbox12" class="label02" id="labeltext">Outro
-                                <input id="checkbox12" type="checkbox" id="labeltext"></label>
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </input><br></div>
-        <div class="hobbie container">
-            <div class="wrapper">
-                <span class="number">4 🡢</span>
-                Voce tem algum hobbie? <br>
-                <input type="text" id="00NU4000000sMd3" name="00NU4000000sMd3" rows="3" type="text" wrap="soft"
-                    placeholder="Responde aqui..." autocomplete="off"></textarea><br>
-                <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok">OK</button>
-                    carrega
-                    em <strong>Enter</strong>
-                    ↵</p>
-            </div>
-        </div>
-        <div class="estado container">
-            <div class="wrapper">
-                <span class="number">5
-                    🡢</span>
-                <p>Qual o seu estado civil? <input id="00NU4000000sMef" value="" name="00NU4000000sMef" title="Estado Civil"
-                        autocomplete="off" type="text" placeholder="Escreve ou selecione alguma opção">
-                    <button onclick="cetinha01()" id="buttonceta">
-                        <span id="Butaoceta01">&#10095;</span>
-                    </button>
+        
+        <div id="nx3">
+            <section class="container optar ">
+                <span>
+                    <p>Você pode optar por não responder às perguntas a seguir, elas são de natureza pessoal e nos auxiliam
+                        a
+                        selecionar o consultor mais adequado ao seu perfil.</p>
+                </span>
+                <span>
+                    <p>Todas as informações fornecidas são tratadas com total sigilo e serão acessadas exclusivamente pelo
+                        consultor
+                        designado para o seu atendimento.</p>
+                </span>
+                <span>
+                    <p><strong>Nenhuma outra pessoa terá acesso a essas respostas.</strong> </p>
+                </span>
+                <span>
+                    <p><strong>Para pular, é só ignorar e clicar em avançar.</strong></p>
+                </span>
+                <p style="font-size: 12px; color: white; font-family: sans-serif;"><button
+                        class="continuarbutton" type="button">Continuar</button> carrega
+                    em <strong>Enter</strong> ↵
                 </p>
-                <div id="opçoesesta">
-                    <ul id="opçaoul">
-                        <li role="option" class="opçaoli" onclick="selectOption(event)">Casado</li>
-                        <li role="option" class="opçaoli" onclick="selectOption(event)">Divorciado</li>
-                        <li role="option" id="opçaoli" onclick="selectOption(event)">Solteiro</li>
-                        <li role="option" id="opçaoli" onclick="selectOption(event)">Namorando</li>
-                        <li role="option" id="opçaoli" onclick="selectOption(event)">Viúvo</li>
-                        <li role="option" id="opçaoli" onclick="selectOption(event)">União estável</li>
-                        <hr>
-                        </hr>
-                    </ul>
-                </div>
-                <p style="font-size: 12px; color: white;"><button class="butonok" id="OK">OK</button> </p>
-            </div>
-        </div>
-        <div class="regime container">
-            <div class="wrapper">
-                <span class="number">6 🡢</span>
-                <p>Qual seu regime de bens?</p><input id="00NU4000000sMmj" name="00NU4000000sMmj" type="text"
-                    title="Qual seu regime de bens?" autocomplete="off" placeholder="Escreve ou selecione alguma opção">
-                <button onclick="cetinha02()" id="buttaoceta02">
-                    <span id="Butaoceta02">&#10095;</span>
-                </button>
-                <div id="opçoesregime">
-                    <ul>
-                        <li value="Solteiro" role="option" onclick="selectOption01(event)">Solteiro :) </li>
-                        <li value="Comunhão Universal" role="option" onclick="selectOption01(event)">Comunhão Universal</li>
-                        <li value="Comunhão parcial" role="option" onclick="selectOption01(event)">Comunhão parcial</li>
-                        <li value="Separação de bens" role="option" onclick="selectOption01(event)">Separação de bens</li>
-                        <li value="União estável não oficializada (Resumindo: Rolo)" role="option" onclick="selectOption01(event)"> União estável não oficializada (Resumindo: Rolo)</li>
-                        <li value="Participação Final nos Aquestos" role="option" onclick="selectOption01(event)">ParticipaçãoFinalnos Aquestos</li>
-                        <hr class="linha">
-                        </hr>
-                    </ul>
-                </div>
-                <p style="font-size: 12px; color: white;"><button class="butonok" id="OK01">OK</button> </p>
-            </div>
-        </div>
-        <div class="filho container">
-            <div class="wrapper">
-                <span class="number">7 🡢</span>
-                <p>Tem filhos? Fale sobre eles: idade, se vivem contigo, situação.
-                </p>
-                <input type="text" id="00NU4000000sMoL" name="00NU4000000sMoL" rows="5" type="text" wrap="soft"
-                    placeholder="Responde aqui...">
-                <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok">OK</button>
-                    carrega
-                    em <strong>Enter</strong>
-                    ↵</p>
-            </div>
-        </div>
-        <div class="experiencia container">
-            <div class="wrapper">
-                <span class="number">8 🡢</span>
-                <p>Se quiser, conte uma experiência que você gostou (Uma viagem, um restaurante qualquer coisa)</p>
-                <p class="pexperiencia"> Isso nos ajuda a entender melhor o seu perfil</p>
-                 <!-- <input type="text" id="00NU4000000sMrZ" name="00NU4000000sMrZ" rows="5" type="text" wrap="soft"  placeholder="Responde aqui..."> <br>   -->
-                    
-                    <textarea  id="00NU4000000sMrZ" name="00NU4000000sMrZ"  placeholder="Responde aqui..."></textarea>
+            </section>
+            </span>
+        
+            <!-- BEBIDA FAVORITA  -->
+            <div class="container input-group" id="bebida">
+<!--                 <textarea   name="00NU4000000sKXL" rows="5" type="text" wrap="soft"></textarea><br>
+ -->                <div class="wrapper">
+                    <span class="number2">2 🡢</span>
+        
+                    <br> Qual a sua bebida favorita?<input class="inputbebida" id="00NU4000000sKXL" name="00NU4000000sKXL"
+                        rows="5" type="text" wrap="soft" placeholder="Responde aqui..." autocomplete="off" value="" type="text"/> <br>
 
-                <p style="font-size: 12px; color: white;">Carrega em <strong>Shift</strong> ⇧ + <strong>Enter</strong> ↵
-                    para
-                    fazer
-                    uma quebra de linha</p>
-                <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok">OK</button>
-                    carrega
-                    em <strong>Enter</strong>
-                    ↵</p>
+
+                    <span style="font-size: 12px; color: white; font-family: sans-serif;" class="okalinhar"><button
+                            class="butonok" id="butonscrolok" type="button">OK</button> carrega
+                        em <strong>Enter</strong>
+                        ↵</span>
+                </div>
             </div>
-        </div>
-        <div id="endereço" class="container">
-            <div class="wrapper">
-                <span class="number">9 🡢</span>
-                Escreva o seu endereço completo (Se quiser pular podemos completar essa informação depois) <br>
-                <div class="endereçoopçoes">
-                    <label for="">Endereço</label><input id="00NU4000000sMy1" name="00NU4000000sMy1" rows="5" type="text"
-                        wrap="soft" placeholder="Avenida da Liberdade 110" autocomplete="off"><br>
-                    <label for=" street">Linha de endereço 2</label><input name="street" placeholder="Apartamento 3D
-                " autocomplete="off"><br>
-                    <label for="city">Cidade/Municipio <input id="city" maxlength="40" name="city" size="20" type="text"
-                            placeholder="Lisboa" autocomplete="off" /><br>
-                    </label>
-                    <label for="state">Estado/Região/Província</label><input id="state" maxlength="20" name="state"
-                        size="20" type="text" placeholder="Lisboa" autocomplete="off" /><br>
-                    <label for="zip">CEP/Código Postal</label><input id="zip" maxlength="20" name="zip" size="20"
-                        type="text" placeholder="1250-146" autocomplete="off" /><br>
-                    <label for="country">País</label><input id="country" maxlength="40" name="country" size="20" type="text"
-                        placeholder="Portugal" autocomplete="off" /><br>
-                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok">OK</button>
+
+
+            <div class="container interesse input-group ">
+                <div class="wrapper">
+                    <span class="number3">3 🡢</span>
+                    <h1>
+                        Você tem interesse em alguma dessas atividades?
+                    </h1>
+                    <input   id="00NU4000001Fe2z" name="00NU4000001Fe2z" rows="3" type="text" wrap="soft"/>
+                    <ul>
+                        <li>
+                            <button onclick="clicar(event)"   value="Eventos parar empresários" type="button">
+                                <p class="correçaospan">A</p>
+                                Eventos parar empresários  <span class="checkcaixa" ></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value=" Shows e Teatro" type="button">
+                                <p class="correçaospan"> B</p>
+                                Shows e Teatro  <span class="checkcaixa" ></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Viagens Nacionais" type="button">
+                                <p class="correçaospan">C</p>
+                                Viagens Nacionais  <span  class="checkcaixa"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Viagens internacionais" type="button">
+                                <p class="correçaospan">D</p>
+                                Viagens internacionais  <span class="checkcaixa"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Queijos e vinhos" type="button">
+                                <p class="correçaospan">E</p>
+                                Queijos e vinhos  <span class="checkcaixa"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Charutos" type="button">
+                                <p class="correçaospan">F</p>
+                                Charutos  <span class="checkcaixa"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Confrarias de uísque" type="button">
+                                <p class="correçaospan">G</p>
+                                Confrarias de uísque  <span class="checkcaixa"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Tênis" type="button">
+                                <p class="correçaospan">H</p>
+                                Tênis  <span class="checkcaixa"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Golf" type="button">
+                                <p class="correçaospan">I</p>
+                                Golf  <span class="checkcaixa"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Hipismo" type="button">
+                                <p class="correçaospan">J</p>
+                                Hipismo  <span class="checkcaixa"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value=" Roteiros românticos" type="button">
+                                <p class="correçaospan">K</p>
+                                Roteiros românticos <span class="checkcaixa" type="button"></span>
+                            </button onclick="clicar(event)">
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Futebol" type="button">
+                                <p class="correçaospan">L</p>
+                                Futebol  <span class="checkcaixa"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="clicar(event)" value="Outros" type="button">
+                                <p class="correçaospan">M</p>
+                                Outros  <span class="checkcaixa"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            <div class="hobbie container input-group">
+                <div class="wrapper">
+                    <span class="number">4 🡢</span>
+                    Voce tem algum hobbie? <br>
+                    <input type="text" id="00NU4000000sMd3" name="00NU4000000sMd3" rows="3" type="text" wrap="soft"
+                        placeholder="Responde aqui..." autocomplete="off"></textarea><br>
+                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
                         carrega
                         em <strong>Enter</strong>
                         ↵</p>
                 </div>
             </div>
-        </div>
-        <div class="medo container">
-            <div class="wrapper">
-                <span class="number">10 🡢</span>
-                Você tem algum medo com relação a sua carreira ou a sua vida financeira? Trabalha em alguma área instável ou
-                arriscada? <br>
-                <div class="medoopçao"></div>
-                <input id="00NDn00000YPKrs" name="00NDn00000YPKrs" rows="3" type="text" wrap="soft"
-                    placeholder="Responde aqui..."><br>
-                <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok">OK</button>
-                    carrega
-                    em <strong>Enter</strong>
-                    ↵</p>
-            </div>
-        </div>
-        
-        <div class="nota container">
-            <div class="wrapper">
-                <span class="number">11 🡢</span>
-                Sendo honesto, que nota você daria para a sua vida financeira atual?<input id="00NDn00000YPKpI"
-                    name="00NDn00000YPKpI" size="20" type="text" /> <br>
-
-                <div >
-                    <button class="butaonota" data-id="1" onclick="efeitopiscar(event)">0</button>
-                    <button class="butaonota" data-id="2" onclick="efeitopiscar(event)">1</button>
-                    <button class="butaonota" onclick="efeitopiscar(event)">2</button>
-                    <button class="butaonota" onclick="efeitopiscar(event)">3</button>
-                    <button class="butaonota" onclick="efeitopiscar(event)">4</button>
-                    <button class="butaonota" onclick="efeitopiscar(event)">5</button>
+            <div class="estado container input-group">
+                <div class="wrapper">
+                    <span class="number">5
+                        🡢</span>
+                    <p>Qual o seu estado civil? <input id="00NU4000000sMef" value="" name="00NU4000000sMef" title="Estado Civil"
+                            autocomplete="off" type="text" placeholder="Escreve ou selecione alguma opção">
+                        <button onclick="cetinha01()" id="buttonceta" type="button">
+                            <span id="Butaoceta01">&#10095;</span>
+                        </button>
+                    </p>
+                    <div id="opçoesesta">
+                        <ul id="opçaoul" >
+                            <li role="option" onclick="selectOption(event)" value="Casado" ><button class="button-li" type="button">Casado</button></li>                        
+                            <li role="option" onclick="selectOption(event)" value="Divorciado"><button  class="button-li" type="button">Divorciado</button></li>
+                            <li role="option" onclick="selectOption(event)" value="Casado"><button  class="button-li" type="button">Solteiro</button></li>
+                            <li role="option" onclick="selectOption(event)" value="Casado"><button  class="button-li" type="button">Namorando</button></li>
+                            <li role="option" onclick="selectOption(event)" value="Casado"><button  class="button-li" type="button">Viúvo</button></li>
+                            <li role="option" onclick="selectOption(event)" value="Casado"><button  class="button-li" type="button">União estável</button></li>
+                            <hr>
+                            </hr>
+                        </ul>
+                    </div>
+                    <p style="font-size: 12px; color: white;"><button class="butonok" id="OK" type="button">OK</button> </p>
                 </div>
-                <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok">OK</button>
-                </p>
             </div>
-        </div>
-        <div class="investidohoje container">
-            <div class="wrapper">
-                <span class="number">12 🡢</span>
-                Qual o seu patrimônio aproximado hoje?<select id="00NDn00000oHrSZ" name="00NDn00000oHrSZ"
-                    title="Quanto você tem investido hoje?">
-                </select>
-                <ul>
-                    <li value="Até R$ 299 mil">
-                        <p>A</p> Até R$ 299 mil
-                    </li>
-                    <li value="Acima de R$ 300 mil">
-                        <p>B</p> Acima de R$ 300 mil
-                    </li>
-                    <li value="Acima de R$ 500 mil">
-                        <p>C</p> Acima de R$ 500 mil
-                    </li>
-                    <li value="Acima de R$ 1 milhão">
-                        <p>D</p> Acima de R$ 1 milhão
-                    </li>
-                    <li value="Acima de R$ 10 milhões">
-                        <p>E</p> Acima de R$ 10 milhões
-                    </li>
-                    <li value="Acima de R$ 300 milhões">
-                        <p>F</p> Acima de R$ 300 milhões
-                    </li>
-                    <li value="Acima de R$ 1 bilhão">
-                        <p>G</p> Acima de R$ 1 bilhão
-                    </li>
-                </ul>
-                <button class="butonok">OK</button>
+            <div class="regime container input-group">
+                <div class="wrapper">
+                    <span class="number">6 🡢</span>
+                    <p>Qual seu regime de bens?</p><input id="00NU4000000sMmj" name="00NU4000000sMmj" type="text"
+                        title="Qual seu regime de bens?" autocomplete="off" placeholder="Escreve ou selecione alguma opção">
+                    <button onclick="cetinha02()" id="buttaoceta02" type="button">
+                        <span id="Butaoceta02">&#10095;</span>
+                    </button>
+                    <div id="opçoesregime">
+                        <ul>
+                            <li value="Solteiro" role="option" onclick="selectOption01(event)"><button class="button-li" type="button">Solteiro :)</button> </li>
+                            <li value="Comunhão Universal" role="option" onclick="selectOption01(event)"><button class="button-li" type="button">Comunhão Universal</button></li>
+                            <li value="Comunhão parcial" role="option" onclick="selectOption01(event)"><button class="button-li" type="button">Comunhão parcial</button></li>
+                            <li value="Separação de bens" role="option" onclick="selectOption01(event)"><button class="button-li" type="button">Separação de bens</button></li>
+                            <li value="União estável não oficializada (Resumindo: Rolo)" role="option" onclick="selectOption01(event)"> <button class="button-li" type="button">União estável não oficializada (Resumindo: Rolo)</button></li>
+                            <li value="Participação Final nos Aquestos" role="option" onclick="selectOption01(event)"><button class="button-li" type="button" >ParticipaçãoFinalnos Aquestos</button></li>
+                            <hr class="linha">
+                            </hr>
+                        </ul>
+                    </div>
+                    <p style="font-size: 12px; color: white;"><button class="butonok" id="OK01" type="button">OK</button> </p>
+                </div>
             </div>
-        </div>
-<div id="hidden-form">
-    UTM Source:<input id="00NDn00000YPKrP" maxlength="255" name="00NDn00000YPKrP" size="20" type="text" /><br>
-  
-      UTM Medium:<input id="00NDn00000YPKt5" maxlength="255" name="00NDn00000YPKt5" size="20" type="text" /><br>
-  
-      UTM Campaign:<input id="00NDn00000YPKtA" maxlength="255" name="00NDn00000YPKtA" size="20" type="text" /><br>
-  
-      UTM Term:<textarea id="00NDn00000YPKtK" name="00NDn00000YPKtK" rows="5" type="text" wrap="soft"></textarea><br>
-  
-      UTM Content:<input id="00NDn00000YPKtP" maxlength="255" name="00NDn00000YPKtP" size="20" type="text" /><br>
-  
-      Produto:<select id="00NDn00000c1RC3" name="00NDn00000c1RC3" title="Produto" value="AUVP Capital">
-          <option value="">-- Nenhum --</option>
-          <option value="A Consultoria Paulo Cuenca">A Consultoria Paulo Cuenca</option>
-          <option value="AUVP">AUVP</option>
-          <option value="AUVP Analítica">AUVP Analítica</option>
-          <option value="AUVP Capital">AUVP Capital</option>
-          <option value="AUVP Consultoria">AUVP Consultoria</option>
-          <option value="AUVP Família">AUVP Família</option>
-          <option value="AUVP Fazendas">AUVP Fazendas</option>
-          <option value="AUVP Investimentos">AUVP Investimentos</option>
-          <option value="AUVP IR">AUVP IR</option>
-          <option value="AUVP Marketing">AUVP Marketing</option>
-          <option value="AUVP Negocio">AUVP Negocio</option>
-          <option value="AUVP Para Sempre">AUVP Para Sempre</option>
-          <option value="Beselha para Sempre">Beselha para Sempre</option>
-          <option value="Comunidade">Comunidade</option>
-          <option value="Consultoria Paulo Cuenca">Consultoria Paulo Cuenca</option>
-          <option value="Curso de Playbook">Curso de Playbook</option>
-          <option value="FEC - Formação Estratégia de Conteúdo">FEC - Formação Estratégia de Conteúdo</option>
-          <option value="O Portal">O Portal</option>
-          <option value="O Superpoder">O Superpoder</option>
-          <option value="Pack Físico">Pack Físico</option>
-          <option value="Paulo Cuenca">Paulo Cuenca</option>
-          <option value="Plano de Metas">Plano de Metas</option>
-          <option value="Reels Superpoderoso">Reels Superpoderoso</option>
-          <option value="Temperatura do Algoritmo">Temperatura do Algoritmo</option>
-      </select><br>
-  
-      <label for="lead_source">Origem do lead</label><select id="lead_source" name="lead_source" >
-          <option value="">-- Nenhum --</option>
-          <option value="Advertisement">Anúncio</option>
-          <option value="Customer Event">Customer Event</option>
-          <option value="Employee Referral">Indicação de funcionário</option>
-          <option value="Google AdWords">Google AdWords</option>
-          <option value="Other">Outros</option>
-          <option value="Partner">Parceiro</option>
-          <option value="Purchased List">Purchased List</option>
-          <option value="Trade Show">Feira ou convenção</option>
-          <option value="Webinar">Webinar</option>
-          <option value="Website">Website</option>
-          <option value="Typeform">Typeform</option>
-      </select><br>
-  
-      <input type="submit" name="submit">
-  
-      </form></div>
-</div>
+            <div class="filho container input-group">
+                <div class="wrapper">
+                    <span class="number">7 🡢</span>
+                    <p>Tem filhos? Fale sobre eles: idade, se vivem contigo, situação.
+                    </p>
+                    <input type="text" id="00NU4000000sMoL" name="00NU4000000sMoL" rows="5" type="text" wrap="soft"
+                        placeholder="Responde aqui...">
+                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                        carrega
+                        em <strong>Enter</strong>
+                        ↵</p>
+                </div>
+            </div>
+            <div class="experiencia container input-group">
+                <div class="wrapper">
+                    <span class="number">8 🡢</span>
+                    <p>Se quiser, conte uma experiência que você gostou (Uma viagem, um restaurante qualquer coisa)</p>
+                    <p class="pexperiencia"> Isso nos ajuda a entender melhor o seu perfil</p>
+                     <!-- <input type="text" id="00NU4000000sMrZ" name="00NU4000000sMrZ" rows="5" type="text" wrap="soft"  placeholder="Responde aqui..."> <br>   -->
+        
+                        <textarea  id="00NU4000000sMrZ" name="00NU4000000sMrZ"  placeholder="Responde aqui..."></textarea>
+                    <p style="font-size: 12px; color: white;">Carrega em <strong>Shift</strong> ⇧ + <strong>Enter</strong> ↵
+                        para
+                        fazer
+                        uma quebra de linha</p>
+                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                        carrega
+                        em <strong>Enter</strong>
+                        ↵</p>
+                </div>
+            </div>
+            <div id="endereço" class="container input-group">
+                <div class="wrapper">
+                    <span class="number">9 🡢</span>
+                    Escreva o seu endereço completo (Se quiser pular podemos completar essa informação depois) <br>
+                    <div class="endereçoopçoes">
+                        <label for="">Endereço</label> <input id="00NU4000000sMy1" name="00NU4000000sMy1" rows="5" type="text"
+                            wrap="soft" placeholder="Avenida da Liberdade 110" autocomplete="off"><br>
+                        <label for=" street">Linha de endereço 2</label><input name="street" placeholder="Apartamento 3D
+                    " autocomplete="off"><br>    
+                        <label for="city">Cidade/Municipio <input id="city" maxlength="40" name="city" size="20" type="text"
+                                placeholder="Lisboa" autocomplete="off" /><br>
+                        </label>
+                        <label for="state">Estado/Região/Província</label><input id="state" maxlength="20" name="state"
+                            size="20" type="text" placeholder="Lisboa" autocomplete="off" /><br>
+                        <label for="zip">CEP/Código Postal</label><input id="zip" maxlength="20" name="zip" size="20"
+                            type="text" placeholder="1250-146" autocomplete="off" /><br>
+                        <label for="country">País</label><input id="country" maxlength="40" name="country" size="20" type="text"
+                            placeholder="Portugal" autocomplete="off" /><br>
+                        <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                            carrega
+                            em <strong>Enter</strong>
+                            ↵</p>
+                    </div>
+                </div>
+            </div>
+            <div class="medo container input-group">
+                <div class="wrapper">
+                    <span class="number">10 🡢</span>
+                    Você tem algum medo com relação a sua carreira ou a sua vida financeira? Trabalha em alguma área instável ou
+                    arriscada? <br>
+                    <div class="medoopçao"></div>
+                    <input id="00NDn00000YPKrs" name="00NDn00000YPKrs" rows="3" type="text" wrap="soft"
+                        placeholder="Responde aqui..."><br>
+                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                        carrega
+                        em <strong>Enter</strong>
+                        ↵</p>
+                </div>
+            </div>
+        
+            <div class="nota container input-group">
+                <div class="wrapper">
+                    <span class="number">11 🡢</span>
+                    Sendo honesto, que nota você daria para a sua vida financeira atual?<input id="00NDn00000YPKpI"
+                        name="00NDn00000YPKpI" size="20" type="text" /> <br>
+                    <div>
+                        <li>
+                            <button class="butaonota"  onclick="efeitopiscar(event)" value="0" type="button">0</button>
+                            <button class="butaonota"  onclick="efeitopiscar(event)" value="1" type="button">1</button>
+                            <button class="butaonota" onclick="efeitopiscar(event)"  value="2" type="button">2</button>
+                            <button class="butaonota" onclick="efeitopiscar(event)" value="3" type="button">3</button>
+                            <button class="butaonota" onclick="efeitopiscar(event)" value="4" type="button">4</button>
+                            <button class="butaonota" onclick="efeitopiscar(event)" value="5" type="button">5</button>
+                        </li>
+                    </div>
+                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                    </p>
+                </div>
+            </div>
+            <div class="investidohoje container input-group">
+                <div class="wrapper">
+                    <span class="number">12 🡢</span>
+                    Qual o seu patrimônio aproximado hoje?<select id="00NDn00000oHrSZ" name="00NDn00000oHrSZ"
+                        title="Quanto você tem investido hoje?">
+                    </select>
+                    <ul >
+                        <li value="Até R$ 299 mil">
+                            <button class="butaoivestidohoje" onclick="taglast(event)" type="button">
+                                <p>A</p> Até R$ 299 mil
+                                <span class="verificaçao"></span>
+                            </button>
+                        </li>
+                        <li value="Acima de R$ 300 mil">
+                            <button class="butaoivestidohoje" onclick="taglast(event)" type="button">
+                                <p>B</p> Acima de R$ 300 mil
+                                <span class="verificaçao"></span>
+                            </button>
+                        </li>
+                        <li value="Acima de R$ 500 mil">
+                            <button class="butaoivestidohoje" onclick="taglast(event)" type="button">
+                                <p>C</p> Acima de R$ 500 mil
+                                <span class="verificaçao"></span>
+                            </button>
+                        </li>
+                        <li value="Acima de R$ 1 milhão">
+                            <button class="butaoivestidohoje" onclick="taglast(event)" type="button">
+                                <p>D</p> Acima de R$ 1 milhão
+                                <span class="verificaçao"></span>
+                            </button>
+                        </li>
+                        <li value="Acima de R$ 10 milhões">
+                            <button class="butaoivestidohoje" onclick="taglast(event)" type="button">
+                                <p>E</p> Acima de R$ 10 milhões
+                                <span class="verificaçao"></span>
+                            </button>
+                        </li>
+                        <li value="Acima de R$ 300 milhões">
+                            <button class="butaoivestidohoje" onclick="taglast(event)" type="button">
+                                <p>F</p> Acima de R$ 300 milhões
+                                <span class="verificaçao"></span>
+                            </button>
+                        </li>
+                        <li value="Acima de R$ 1 bilhão">
+                            <button class="butaoivestidohoje" onclick="taglast(event)" type="button" >
+                                <p>G</p> Acima de R$ 1 bilhão
+                                <span class="verificaçao"></span>
+                            </button>
+                        </li>
+                    </ul>
+        
+                </div>
 
+
+                <button class="butonok" id="okbutaofinal" type="button">OK</button>
+                <button id="submit">Enviar</button>
+
+                <div id="errofinal">
+
+
+                     <span> ⚠ <strong>Ups! </strong>  selecione uma opção</span>
+
+
+                </div>
+
+
+
+
+
+
+<!--                 <input type="submit" name="submit" id="submit" >
+ -->            
+        <div id="hidden-form">
+          UTM Source:<input id="00NDn00000YPKrP" maxlength="255" name="00NDn00000YPKrP" size="20" type="text" /><br>
+          UTM Medium:<input id="00NDn00000YPKt5" maxlength="255" name="00NDn00000YPKt5" size="20" type="text" /><br>
+          UTM Campaign:<input id="00NDn00000YPKtA" maxlength="255" name="00NDn00000YPKtA" size="20" type="text" /><br>
+          UTM Term:<textarea id="00NDn00000YPKtK" name="00NDn00000YPKtK" rows="5" type="text" wrap="soft"></textarea><br>
+          UTM Content:<input id="00NDn00000YPKtP" maxlength="255" name="00NDn00000YPKtP" size="20" type="text" /><br>
+          Produto:<select id="00NDn00000c1RC3" name="00NDn00000c1RC3" title="Produto" value="AUVP Capital">
+              <option value="">-- Nenhum --</option>
+              <option value="A Consultoria Paulo Cuenca">A Consultoria Paulo Cuenca</option>
+              <option value="AUVP">AUVP</option>
+              <option value="AUVP Analítica">AUVP Analítica</option>
+              <option value="AUVP Capital">AUVP Capital</option>
+              <option value="AUVP Consultoria">AUVP Consultoria</option>
+              <option value="AUVP Família">AUVP Família</option>
+              <option value="AUVP Fazendas">AUVP Fazendas</option>
+              <option value="AUVP Investimentos">AUVP Investimentos</option>
+              <option value="AUVP IR">AUVP IR</option>
+              <option value="AUVP Marketing">AUVP Marketing</option>
+              <option value="AUVP Negocio">AUVP Negocio</option>
+              <option value="AUVP Para Sempre">AUVP Para Sempre</option>
+              <option value="Beselha para Sempre">Beselha para Sempre</option>
+              <option value="Comunidade">Comunidade</option>
+              <option value="Consultoria Paulo Cuenca">Consultoria Paulo Cuenca</option>
+              <option value="Curso de Playbook">Curso de Playbook</option>
+              <option value="FEC - Formação Estratégia de Conteúdo">FEC - Formação Estratégia de Conteúdo</option>
+              <option value="O Portal">O Portal</option>
+              <option value="O Superpoder">O Superpoder</option>
+              <option value="Pack Físico">Pack Físico</option>
+              <option value="Paulo Cuenca">Paulo Cuenca</option>
+              <option value="Plano de Metas">Plano de Metas</option>
+              <option value="Reels Superpoderoso">Reels Superpoderoso</option>
+              <option value="Temperatura do Algoritmo">Temperatura do Algoritmo</option>
+          </select><br> 
+          <label for="lead_source">Origem do lead</label><select id="lead_source" name="lead_source" >
+              <option value="">-- Nenhum --</option>
+              <option value="Advertisement">Anúncio</option>
+              <option value="Customer Event">Customer Event</option>
+              <option value="Employee Referral">Indicação de funcionário</option>
+              <option value="Google AdWords">Google AdWords</option>
+              <option value="Other">Outros</option>
+              <option value="Partner">Parceiro</option>
+              <option value="Purchased List">Purchased List</option>
+              <option value="Trade Show">Feira ou convenção</option>
+              <option value="Webinar">Webinar</option>
+              <option value="Website">Website</option>
+              <option value="Typeform">Typeform</option>
+          </select><br>
+    </form>
+      
+    </div>
+</div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

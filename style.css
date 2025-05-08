@@ -1,6 +1,6 @@
 @import "demo.css";
 
-
+ 
 * {
     margin: 0;
     box-sizing: border-box;
@@ -12,11 +12,30 @@ body {
     scroll-behavior: smooth;
     background-color: #113822;
     color: white;
+    position: relative;
 
 
 
 }
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #857638;
+    z-index: 1000;
+    
+    
+  }
 
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #E3A749;
+    transition: width 0.3s ease;
+  }
+  
 
 input[type="text"]::placeholder {
     color: #5d806d;
@@ -28,6 +47,18 @@ input[type="text"]::placeholder {
 
 
 
+.imgauvp{
+    background-image: url(https://images.typeform.com/images/RVJQ4JXsUtTy);
+    background-size: contain;        /* faz a imagem cobrir todo o elemento */
+    background-repeat: no-repeat; /* impede que a imagem fique se repetindo */
+    background-position: center; 
+    height: 130px;
+    width: 170px;
+    border: none;
+    margin-left: 35px;
+    position: fixed;
+   
+}
 
 
 
@@ -37,7 +68,7 @@ input[type="text"]::placeholder {
 
 .button01 {
     background-color: #E3A749;
-    width: 30px;
+    width: 34px;
     height: 40px;
     position: absolute;
     right: 61px;
@@ -59,7 +90,7 @@ input[type="text"]::placeholder {
 
 .button02 {
     background-color: #E3A749;
-    width: 30px;
+    width: 34px;
     height: 40px;
     position: absolute;
     right: 20px;
@@ -112,7 +143,14 @@ input {
     font-family: 'Montserrat', sans-serif;
 }
 
-
+.number3{
+    position: absolute;
+    top: 5px;
+    left: -43px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+}
 
 
 
@@ -156,33 +194,44 @@ input {
 
 
 
-
-
-#DDD{
-    margin-left: 15px;
-    height: 54px;
-    width: 27px;
-    background-color: #113822;
-    color: white;
-    font-size: 22px;
-    transform: rotate(90deg);
-    border: none;
-    border-right: 1px solid #597465;
-    text-align: left;
-    
-}
 #phone{
-    width: 88%;
-    position: absolute;
-    right: 0;
+    width: 100%;
+    margin-bottom: 22px;
     
 }
 
-.telefone-box{
-    height: 40px;
+
+
+.iti__dropdown-content {
+    background-color: #113822;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    border-radius: 6px;
+
 }
 
 
+.iti__flag {
+    transform: scale(1.5); /* Aumenta 50% do tamanho original */
+    transform-origin: left center; /* Mantém alinhamento adequado */
+  }
+  
+  /* Ajusta o container da bandeira para acomodar o novo tamanho */
+  .iti__flag-container {
+    width: 40px; /* Valor ajustado conforme necessário */
+  }
+  
+  /* Ajusta o padding do input para não sobrepor à bandeira maior */
+  .iti--allow-dropdown input {
+    padding-left: 50px; /* Valor ajustado conforme necessário */
+  }
+
+.iti__country{
+    background-color: #294C39;
+    margin: 8px;
+    border: 1px solid #BDC7C1;
+    border-radius: 5px;
+}
 
 
 .n01 h1 {
@@ -319,6 +368,198 @@ span p {
     margin-bottom: 12px;
 }
 
+
+
+/* TAG 3*/
+
+.interesse{
+    text-align: left;
+    width: 38%;
+}
+
+.interesse h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+}
+.interesse input{
+    display: none;
+}
+
+.interesse ul{
+    padding-left: 0;
+
+}
+.interesse li{
+    list-style: none;
+    display: flex;
+    width: 370px;
+    margin: 10px;
+    position: relative;
+
+
+}
+.interesse button{
+    height: 36px;
+    width: 350px;
+    background-color: #294C39;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.692);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+.interesse p{
+    background-color: #113822;
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border: 1px solid white;
+    width: 22px;
+    text-align: center;
+    height: 22px;   
+    margin-right: 10px;
+    padding-top: 3px;
+    border-radius: 2px;
+
+
+}
+.interesse span{
+    background-color: transparent;
+    position: absolute;
+    border: none;
+    right: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.correçao{
+    text-align: center;
+    width: 40%;
+    display: flex;
+    align-items: first baseline;
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+
+
+
+}
+
+.correçao textarea{
+    display: none;
+}
+
+
+
+
+
+.correçao p, .correçao button{
+    height: 40px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    background-color: #294C39;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px whitesmoke solid;
+    border-radius: 4px;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    color: white;
+}
+
+
+
+
+.correçaospan{
+    height: 20px;
+    margin: 0px 6px 0px 5px;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    background-color: #113822;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px whitesmoke solid;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#listacorreçao{
+    width: 100%;
+    margin-top: 22px;
+    border-radius: 5px;
+}
+
+
+
+
+.verificaçao{
+     position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+ 
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .pad {
     align-items: center;
     padding-left: 0px;
@@ -353,9 +594,13 @@ span p {
     margin: 10px;
     list-style: none;
     position: relative;
+    transition: background-color 0.3s;
+
 
 }
-
+.ativo {
+    background-color: #597465;
+  }
 
 .labelA {
     display: inline-block;
@@ -484,21 +729,27 @@ input[type="checkbox"]:checked::after {
 }
 
 .estado li {
-    background-color: #5974655b;
-
-    color: white;
-    border: 1px solid white;
-    width: 100%;
-    padding: 6px;
-    border-radius: 4px;
-    font-size: 21px;
     list-style: none;
-    margin: 5px;
-    font-family: 'Montserrat', sans-serif;
     transition: background-color 0.2s ease, transform 2s ease;
+} 
+.button-li{
+    padding: 6px;
+    margin: 5px;
+    height: 36px;
+    width: 100%;
+    background-color: #294C39;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.692);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
 }
 
-.estado li:hover {
+
+.button-li:hover {
     background-color: #597465;
 }
 
@@ -654,16 +905,7 @@ hr {
 
 
 #opçoesregime li {
-    background-color: #5974655b;
-    color: white;
-    border: 1px solid white;
-    width: 100%;
-    padding: 6px;
-    border-radius: 4px;
-    font-size: 21px;
     list-style: none;
-    margin: 5px;
-    font-family: 'Montserrat', sans-serif;
     transition: background-color 0.2s ease, transform 2s ease;
     /* Transição lenta */
 }
@@ -854,6 +1096,9 @@ input::placeholder {
 .nota input {
     display: none;
 }
+.nota li {
+    list-style: none;
+}
 
 
 
@@ -897,18 +1142,7 @@ input::placeholder {
     height: 100vh;
 }
 
-.investidohoje select {
-    font-family: 'Montserrat', sans-serif;
-    outline: 0;
-    border: 0;
-    width: 95%;
-    text-align: left;
-    font-size: 24px;
-    color: white;
-    border-bottom: 1px solid #597465;
-    background-color: #113822;
-    margin-bottom: 18px;
-}
+    
 
 .investidohoje ul {
     list-style: none;
@@ -916,10 +1150,15 @@ input::placeholder {
     text-align: left;
     padding-left: 0px;
     margin-bottom: 18px;
+    width: 100%;
 
 }
 
-.investidohoje li {
+
+
+.butaoivestidohoje {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
     background-color: #294C39;
     height: 40px;
     border: 1px solid rgba(236, 236, 236, 0.786);
@@ -927,33 +1166,38 @@ input::placeholder {
     width: 46%;
     border-radius: 4px;
     display: flex;
-    /* Ativa o Flexbox */
-    /* Alinha horizontalmente */
     align-items: center;
-    /* Alinha verticalmente */
     font-size: 20px;
+    cursor: pointer;
+    position: relative;
 }
 
 
 .investidohoje p {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
     background-color: #113822;
     height: 20px;
     width: 20px;
     display: flex;
-    /* Ativa o Flexbox */
     font-size: 12px;
     font-weight: bold;
     justify-content: center;
-    /* Alinha horizontalmente */
     align-items: center;
     border: 1px solid whitesmoke;
     border-radius: 2px;
     margin-right: 8px;
-    margin-left: 8px;
+    margin-left: 4px;
     font-family: sans-serif;
 
 
 }
+
+.verificaçao{
+    position: absolute;
+    right: 25px;
+}
+
 
 
 .investidohoje select {
@@ -961,5 +1205,38 @@ input::placeholder {
 }
 
 #hidden-form {
+    display: none;
+}
+#okbutaofinal{
+    display: block;
+}
+#submit{
+    text-align: center;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    background-color: #E3A749;
+    border-radius: 4px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border: none;
+    margin-right: 8px;
+    display: none;
+
+}
+#errofinal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 30px ;
+    border-radius: 3px;
+    background-color: #F7E6E6;
+}
+#errofinal span{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: #8c0303;
     display: none;
 }
