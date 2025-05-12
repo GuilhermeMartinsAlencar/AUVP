@@ -201,7 +201,7 @@ window.onload = function () {
 };
 
 
-
+console.log("Aguarde...");
 
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll('.container');
