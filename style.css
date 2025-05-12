@@ -13,6 +13,7 @@ body {
     background-color: #113822;
     color: white;
     position: relative;
+    overflow: hidden;
 
 
 
@@ -194,11 +195,40 @@ input {
 
 
 
-#phone{
+
+
+
+.iti{
+    display: block !important; 
+}
+.telefone-box{
     width: 100%;
-    margin-bottom: 22px;
+}
+
+.telefone-box button{    
+    border-bottom: 1px solid #f3f5f42f;
+}
+.telefone-box input{
+    padding-left: 0px !important;
+    text-align: left !important;
+    width: 92% !important;
+}
+
+#phone::placeholder{
+    position: absolute;
+    left: 1px;    
+    text-align: left;
     
 }
+
+
+
+
+@media (max-width: 480px) {
+  .iti__country-list {
+    width: 8vw; /* Ajuste para telas pequenas */
+  }
+  }
 
 
 
@@ -211,20 +241,9 @@ input {
 }
 
 
-.iti__flag {
-    transform: scale(1.5); /* Aumenta 50% do tamanho original */
-    transform-origin: left center; /* Mantém alinhamento adequado */
-  }
-  
-  /* Ajusta o container da bandeira para acomodar o novo tamanho */
-  .iti__flag-container {
-    width: 40px; /* Valor ajustado conforme necessário */
-  }
-  
-  /* Ajusta o padding do input para não sobrepor à bandeira maior */
-  .iti--allow-dropdown input {
-    padding-left: 50px; /* Valor ajustado conforme necessário */
-  }
+
+
+
 
 .iti__country{
     background-color: #294C39;
@@ -262,7 +281,6 @@ label {
     font-size: 21px;
     text-align: center;
 }
-
 
 
 .alinhar {
@@ -1210,6 +1228,7 @@ input::placeholder {
 #okbutaofinal{
     display: block;
 }
+
 #submit{
     text-align: center;
     font-weight: bold;
@@ -1225,18 +1244,20 @@ input::placeholder {
     display: none;
 
 }
-#errofinal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 30px ;
+.errofinal{
+    width: 280px;
+    height: 30px;
     border-radius: 3px;
     background-color: #F7E6E6;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
-#errofinal span{
+.errofinal span{
+
+    text-align: center;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     color: #8c0303;
-    display: none;
+    
 }

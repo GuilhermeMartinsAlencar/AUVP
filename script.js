@@ -1,18 +1,18 @@
 function toggleMenu() {
-
-const input = document.querySelector("#phone");
-window.intlTelInput(input, {
-    loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/utils.js"),
-});
+  const input = document.querySelector("#phone");
+  window.intlTelInput(input, {
+    loadUtils: () =>
+      import(
+        "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/utils.js"
+      ),
+  });
 }
 
 toggleMenu();
 
-
-
-
-
-
+document
+  .querySelector("#phone")
+  .style.setProperty("margin", "20px 0px 0px 60px", "important");
 
 let lastScrollTop = 0;
 let arrumar = true;
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //
 
-/* 
+
 
 window.addEventListener("scroll", function () {
     let scrollTop = scrollY || document.documentElement.scrollTop;
@@ -161,7 +161,7 @@ window.addEventListener("scroll", function () {
 document.addEventListener("DOMContentLoaded", function () {
     if (arrumar === true) {
         // Seleciona todos os campos que devem ativar o evento
-        const camposInput = document.querySelectorAll("#first_name, #last_name, #telefone, #email");
+        const camposInput = document.querySelectorAll("#first_name, #last_name, #phone, #email");
 
         camposInput.forEach(campo => {
             campo.addEventListener("input", function() {
@@ -199,6 +199,9 @@ if ('scrollRestoration' in history) {
 window.onload = function () {
   window.scrollTo(0, 0);
 };
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll('.container');
@@ -277,7 +280,7 @@ document.querySelectorAll(".butonok").forEach((btn) => {
 
     })
 }); 
-  */
+  
 
 // TAG NUMERO
 
@@ -527,10 +530,12 @@ function apagarSelecao02() {
   let input = document.getElementById("00NU4000000sMmj");
   let botao = document.getElementById("buttaoceta02");
   var Ok = document.getElementById("OK01");
+  let butao = document.getElementById("Butaoceta02");
+  butao.style.transform = "rotate(90deg)";
 
+  butao.textContent = "\u276F"; // ou "\276F", mas com "u" é mais claro
   input.value = ""; // Limpa o input
   Ok.style.display = "block";
-  let butao = document.getElementById("Butaoceta02");
   toggle = !toggle;
   botao.setAttribute("onclick", "cetinha02()"); // Restaura o clique original
 }
@@ -598,11 +603,23 @@ function efeitopiscar(event) {
   }, 1000);
 }
 
+let inputok = document.getElementById("okbutaofinal");
+
+inputok.addEventListener("click", function () {
+  document.querySelector(".errofinal").style.display = "flex";
+  inputok.style.display = "none";
+});
+
+
+
 // TAG 12
 
 function taglast(event) {
+  setTimeout(() => {
+    document.querySelector(".errofinal").style.display = "none";
+  }, 800);
+
   let inputenviar = document.getElementById("submit");
-  let inputok = document.getElementById("okbutaofinal");
 
   setTimeout(() => {
     inputenviar.style.display = "block";
@@ -613,6 +630,9 @@ function taglast(event) {
   let colors = ["#597465", "#113822"];
   let i = 0;
   let checkSpan = button.querySelector(".verificaçao");
+
+  console.log(button);
+  
 
   checkSpan.textContent = "\u2713";
 
