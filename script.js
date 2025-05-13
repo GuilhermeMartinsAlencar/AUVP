@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-window.addEventListener("scroll", function () {
+ window.addEventListener("scroll", function () {
     let scrollTop = scrollY || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
 
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
  
-
+ 
 
 
 //   ROLAGEM COM PAUSA E BOTAO DE ROLAGEM E  // 
@@ -280,7 +280,7 @@ document.querySelectorAll(".butonok").forEach((btn) => {
 
     })
 }); 
-  
+   
 
 // TAG NUMERO
 
