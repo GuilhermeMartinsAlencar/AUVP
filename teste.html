@@ -1,21 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
+  <title>Validação de Telefone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+  <style>
+   
+  </style>
 </head>
 <body>
-  <input id="phone" name="phone">
 
+  <input type="tel" id="telefone" placeholder="Digite seu telefone" />
+  <button id="verificar">Verificar</button>
+  <p id="mensagem"></p>
 
-  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
-<script>
-  const input = document.querySelector("#phone");
-  window.intlTelInput(input, {
-    loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/utils.js"),
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+  <script>
+    const input = document.querySelector("#telefone");
+    const iti = window.intlTelInput(input, {
+      // Opcional: configurações adicionais
+      initialCountry: "auto",
+      geoIpLookup: callback => {
+        fetch('https://ipapi.co/json')
+          .then(res => res.json())
+          .then(data => callback(data.country_code))
+          .catch(() => callback("us"));
+      },
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js", // necessário para isValidNumber
+    });
+
+    document.getElementById("verificar").addEventListener("click", () => {
+      const numeroValido = iti.isValidNumber();
+      const mensagem = document.getElementById("mensagem");
+
+      if (numeroValido) {
+        input.classList.remove("error");
+        input.classList.add("valid");
+        mensagem.textContent = "Número válido!";
+        mensagem.style.color = "green";
+      } else {
+        input.classList.remove("valid");
+        input.classList.add("error");
+        mensagem.textContent = "Número inválido!";
+        mensagem.style.color = "red";
+      }
+    });
+  </script>
+
 </body>
 </html>
