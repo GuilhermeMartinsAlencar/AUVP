@@ -27,7 +27,7 @@ let ultimoBotao = null; // Guarda o último botão clicado
 let blinkEffect = null; // Guarda o intervalo do piscar
 let tempo = null;
 let troca = true;
-
+      
 const inputs = document.querySelectorAll('input[type="text"]');
 
 inputs.forEach((input) => {
@@ -128,7 +128,7 @@ window.addEventListener("scroll", function () {
       bloquearScroll = true;
     } else if (!iti.isValidNumber()) {
       campoTelefone.style.display = "block";
-      campoTelefone.style.width = "400px"
+      campoTelefone.style.width = "320px"
       campoTelefone.innerHTML = "Hmm... esse número de telefone não é válido";
       bloquearScroll = true;
     }
@@ -142,7 +142,7 @@ window.addEventListener("scroll", function () {
       bloquearScroll = true;
     } else if (!emailRegex.test(email)) {
       campoEmail.style.display = "block";
-      campoEmail.style.width = "400px"
+      campoEmail.style.width = "320px"
       campoEmail.innerHTML = "Hmm... esse e-mail não é válido";
       bloquearScroll = true;
     }
@@ -229,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentSection--;
             }
         }
-
         
         if (currentSection === 3 || currentSection === 9) {
          console.log("OLA PURA")
@@ -281,14 +280,38 @@ document.querySelectorAll(".butonok").forEach((btn) => {
         sections[currentSection].scrollIntoView({ behavior: 'smooth' });
 
     })
+    document.getElementById("btndwon1").addEventListener("click", (event) => {
+      
+        if (currentSection < totalSections - 1) {
+            currentSection++;
+            console.log("Clicou no butaodown!");
+          let buttao = document.querySelector(".buttonsetaesquerda");
+           buttao.style.opacity = "100%"
+        }
+        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
 
-
+    })
 
     document.getElementById("btnCima").addEventListener("click", (event) => {
 
         if (currentSection <= totalSections - 1) {
             currentSection--;
         }
+    
+
+        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+
+
+    })
+        document.getElementById("btnCima1").addEventListener("click", (event) => {
+
+        if (currentSection <= totalSections - 1) {
+            currentSection--;
+        }
+     if (currentSection === 0) {
+        let buttao = document.querySelector(".buttonsetaesquerda");
+        buttao.style.opacity = "0%"         
+      }
 
         sections[currentSection].scrollIntoView({ behavior: 'smooth' });
 

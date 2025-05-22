@@ -37,9 +37,13 @@
 <!--  ----------------------------------------------------------------------  -->
 </head>
 <body>
- <div class="imgauvp"></div>
+ <div class="containerdaimgPrincipal"> </div>
+     <div class="imgauvp"></div>
 
-       
+
+
+    <button class="buttonsetaesquerda" id="btnCima1" > &#5176; </button>
+    <button class="butaoOKandroid" id="btndwon1">OK</button>
 
 
     <div class="progress-container">
@@ -122,10 +126,12 @@
                 <span>
                     <p><strong>Para pular, é só ignorar e clicar em avançar.</strong></p>
                 </span>
-                <p  style="font-size: 12px; color: white; font-family: sans-serif;"><button
-                        class="continuarbutton" type="button">Continuar</button> carrega
-                    em <strong>Enter</strong> ↵
-                </p>
+                <div class="apagarandroid">
+                    <p  style="font-size: 12px; color: white; font-family: sans-serif;"><button
+                            class="continuarbutton" type="button">Continuar</button> carrega
+                        em <strong>Enter</strong> ↵
+                    </p>
+                </div>
             </section>
             </span>
         
@@ -139,10 +145,12 @@
                         rows="5" type="text" wrap="soft" placeholder="Responde aqui..." autocomplete="off" value="" type="text"/> <br>
 
 
-                    <span style="font-size: 12px; color: white; font-family: sans-serif;" class="okalinhar p01"><button
-                            class="butonok" id="butonscrolok" type="button">OK</button> carrega
-                        em <strong>Enter</strong>
-                        ↵</span>
+                    <div class="apagarandroid">
+                        <span style="font-size: 12px; color: white; font-family: sans-serif;" class="okalinhar p01"><button
+                                class="butonok" id="butonscrolok" type="button">OK</button> carrega
+                            em <strong>Enter</strong>
+                            ↵</span>
+                    </div>
                 </div>
             </div>
 
@@ -152,7 +160,7 @@
                 <div class="wrapper">
 
                     <div class="interesseopçoes">
-                                        <span class="number">3 🡢</span>
+                    <span class="number3">3 🡢</span>
 
                     <h1>
                         Você tem interesse em alguma dessas atividades?
@@ -242,7 +250,7 @@
                                 </button>
                             </li>
                         </ul>
-                        <button class="butonok" id="OK" type="button" style="margin-left: 10px;">OK</button> 
+                        <div class="apagarandroid"><button class="butonok" id="OK" type="button" style="margin-left: 10px;">OK</button> </div>
 
                         </div>
                         </div>
@@ -257,10 +265,12 @@
                     <p>Voce tem algum hobbie?</p> <br>
                     <input type="text" id="00NU4000000sMd3" name="00NU4000000sMd3" rows="3" type="text" wrap="soft"
                         placeholder="Responde aqui..." autocomplete="off"></textarea><br>
-                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
-                        carrega
-                        em <strong>Enter</strong>
-                        ↵</p>
+                    <div class="apagarandroid">
+                        <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                            carrega
+                            em <strong>Enter</strong>
+                            ↵</p>
+                    </div>
                 </div>
             </div>
             <div class="estado container input-group arrumar">
@@ -285,7 +295,9 @@
                             </hr>
                         </ul>
                     </div>
-                    <p style="font-size: 12px; color: white;"><button class="butonok" id="OK" type="button">OK</button> </p>
+                    <div class="apagarandroid">
+                        <p style="font-size: 12px; color: white;"><button class="butonok" id="OK" type="button">OK</button> </p>
+                    </div>
                 </div>
             </div>
             <div class="regime container input-group arrumar">
@@ -308,7 +320,9 @@
                             </hr>
                         </ul>
                     </div>
-                    <p style="font-size: 12px; color: white;"><button class="butonok" id="OK01" type="button">OK</button> </p>
+                    <div class="apagarandroid">
+                        <p style="font-size: 12px; color: white;"><button class="butonok" id="OK01" type="button">OK</button> </p>
+                    </div>
                 </div>
             </div>
             <div class="filho container input-group arrumar">
@@ -318,10 +332,12 @@
                     </p>
                     <input type="text" id="00NU4000000sMoL" name="00NU4000000sMoL" rows="5" type="text" wrap="soft"
                         placeholder="Responde aqui...">
-                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
-                        carrega
-                        em <strong>Enter</strong>
-                        ↵</p>
+                    <div class="apagarandroid">
+                        <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                            carrega
+                            em <strong>Enter</strong>
+                            ↵</p>
+                    </div>
                 </div>
             </div>
             <div class="experiencia container input-group arrumar">
@@ -332,24 +348,28 @@
                      <!-- <input type="text" id="00NU4000000sMrZ" name="00NU4000000sMrZ" rows="5" type="text" wrap="soft"  placeholder="Responde aqui..."> <br>   -->
         
                         <textarea  id="00NU4000000sMrZ" name="00NU4000000sMrZ"  placeholder="Responde aqui..."></textarea>
-                    <p style="font-size: 12px; color: white;">Carrega em <strong>Shift</strong> ⇧ + <strong>Enter</strong> ↵
+                    <p class="apagarandroid" style="font-size: 12px; color: white;">Carrega em <strong>Shift</strong> ⇧ + <strong>Enter</strong> ↵
                         para
                         fazer
                         uma quebra de linha</p>
-                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
-                        carrega
-                        em <strong>Enter</strong>
-                        ↵</p>
+                    <div class="apagarandroid">
+                        <p  style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                            carrega
+                            em <strong>Enter</strong>
+                            ↵</p>
+                    </div>
                 </div>
             </div>
             <div id="endereço" class="container input-group arrumar">
                     
                     <div class="endereço-width">
-                            <span class="number">9 🡢</span>
-                        <h1>Escreva o seu endereço completo (Se quiser pular podemos completar essa informação depois)</h1> <br>
+                        <h1>Escreva o seu endereço completo (Se quiser pular podemos completar essa informação depois)
+                        <span class="number9">9 🡢</span>
+
+                        </h1> <br>
                         <div class="endereçoopçoes">
                             <label for="">Endereço</label> <input id="00NU4000000sMy1" name="00NU4000000sMy1" rows="5" type="text"
-                                wrap="soft" placeholder="Avenida da Liberdade 110" autocomplete="off"><br>
+                                wrap="soft" placeholder="Avenida da Liberdade 110" autocomplete="off" size="20"><br>
                             <label for=" street">Linha de endereço 2</label><input name="street" placeholder="Apartamento 3D
                         " autocomplete="off"><br>
                             <label for="city">Cidade/Municipio <input id="city" maxlength="40" name="city" size="20" type="text"
@@ -361,10 +381,12 @@
                                 type="text" placeholder="1250-146" autocomplete="off" /><br>
                             <label for="country">País</label><input id="country" maxlength="40" name="country" size="20" type="text"
                                 placeholder="Portugal" autocomplete="off" /><br>
-                            <p  style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
-                                carrega
-                                em <strong>Enter</strong>
-                                ↵</p>
+                            <div class="apagarandroid">
+                                <p  style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                                    carrega
+                                    em <strong>Enter</strong>
+                                    ↵</p>
+                            </div>
                         </div>
                 </div>
             </div>
@@ -375,13 +397,14 @@
                         Você tem algum medo com relação a sua carreira ou a sua vida financeira? Trabalha em alguma área instável ou
                         arriscada?
                     </p> <br>
-                    <div class="medoopçao"></div>
                     <input id="00NDn00000YPKrs" name="00NDn00000YPKrs" rows="3" type="text" wrap="soft"
                         placeholder="Responde aqui..."><br>
-                    <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
-                        carrega
-                        em <strong>Enter</strong>
-                        ↵</p>
+                    <div class="apagarandroid">
+                        <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                            carrega
+                            em <strong>Enter</strong>
+                            ↵</p>
+                    </div>
                 </div>
             </div>
         
@@ -398,8 +421,10 @@
                                     <li><button class="butaonota" onclick="efeitopiscar(event)" value="4" type="button">4</button></li>
                                     <li><button class="butaonota" onclick="efeitopiscar(event)" value="5" type="button">5</button></li>
                                 </ul>
-                        <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
-                        </p>
+                        <div class="apagarandroid">
+                            <p style="font-size: 12px; color: white; font-family: sans-serif;"><button class="butonok" type="button">OK</button>
+                            </p>
+                        </div>
                     </div>
                 </div>
             <div class="investidohoje container input-group arrumar">

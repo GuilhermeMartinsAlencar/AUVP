@@ -1,51 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Validação de Telefone</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-   
+    .botoesFixos {
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.botao1, .botao2 {
+  flex: 1;
+  height: 50px;
+  background-color: #E3A749;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
   </style>
 </head>
 <body>
-
-  <input type="tel" id="telefone" placeholder="Digite seu telefone" />
-  <button id="verificar">Verificar</button>
-  <p id="mensagem"></p>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-  <script>
-    const input = document.querySelector("#telefone");
-    const iti = window.intlTelInput(input, {
-      // Opcional: configurações adicionais
-      initialCountry: "auto",
-      geoIpLookup: callback => {
-        fetch('https://ipapi.co/json')
-          .then(res => res.json())
-          .then(data => callback(data.country_code))
-          .catch(() => callback("us"));
-      },
-      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js", // necessário para isValidNumber
-    });
-
-    document.getElementById("verificar").addEventListener("click", () => {
-      const numeroValido = iti.isValidNumber();
-      const mensagem = document.getElementById("mensagem");
-
-      if (numeroValido) {
-        input.classList.remove("error");
-        input.classList.add("valid");
-        mensagem.textContent = "Número válido!";
-        mensagem.style.color = "green";
-      } else {
-        input.classList.remove("valid");
-        input.classList.add("error");
-        mensagem.textContent = "Número inválido!";
-        mensagem.style.color = "red";
-      }
-    });
-  </script>
+  <div class="botoesFixos">
+  <button class="botao1">Botão 1</button>
+  <button class="botao2">Botão 2</button>
+</div>
 
 </body>
 </html>
