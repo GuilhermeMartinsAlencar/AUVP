@@ -4,18 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
+  <style>
+    .botoesFixos {
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.botao1, .botao2 {
+  flex: 1;
+  height: 50px;
+  background-color: #E3A749;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+  </style>
 </head>
 <body>
-  <input id="phone" name="phone">
+  <div class="botoesFixos">
+  <button class="botao1">Botão 1</button>
+  <button class="botao2">Botão 2</button>
+</div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
-<script>
-  const input = document.querySelector("#phone");
-  window.intlTelInput(input, {
-    loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/utils.js"),
-  });
-</script>
 </body>
 </html>

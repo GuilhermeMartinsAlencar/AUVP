@@ -8,7 +8,11 @@ function toggleMenu() {
   });
 }
 
+
+//
+
 toggleMenu();
+
 
 document
   .querySelector("#phone")
@@ -23,7 +27,7 @@ let ultimoBotao = null; // Guarda o último botão clicado
 let blinkEffect = null; // Guarda o intervalo do piscar
 let tempo = null;
 let troca = true;
-
+      
 const inputs = document.querySelectorAll('input[type="text"]');
 
 inputs.forEach((input) => {
@@ -51,138 +55,130 @@ document.addEventListener("keydown", function (e) {
 });
 //
 
-// BARRA PROGRESSO
+let iti; // variável global para intl-tel-input
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("form");
-  const progressBar = document.getElementById("progressBar");
-  const groups = form.querySelectorAll(".input-group");
+  // Inicializar intl-tel-input com Brasil como padrão
+  const phoneInput = document.querySelector("#phone");
+  iti = window.intlTelInput(phoneInput, {
+    initialCountry: "br",
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+  });
 
-  function updateProgress() {
-    let filled = 0;
+  // Forçar Brasil visualmente após carregamento
+  setTimeout(() => {
+    iti.setCountry("br");
+    iti._updateFlagFromNumber();
+  }, 100);
 
-    groups.forEach((group) => {
-      const inputs = group.querySelectorAll("input, select, textarea");
-      let groupFilled = false;
+  // Esconder erros quando o usuário começa a digitar
+  if (arrumar === true) {
+    const camposInput = document.querySelectorAll("#first_name, #last_name, #phone, #email");
 
-      inputs.forEach((input) => {
-        if (input.value.trim() !== "" && !groupFilled) {
-          filled++;
-          groupFilled = true;
-        }
+    camposInput.forEach(campo => {
+      campo.addEventListener("input", function () {
+        document.getElementById("erroNome").style.display = 'none';
+        document.getElementById("errosobreNome").style.display = "none";
+        document.getElementById("telefone").style.display = "none";
+        document.getElementById("erroEmail").style.display = "none";
+
+        document.body.style.overflow = "hidden";
+        document.getElementById('nx3').style.display = "block";
+
+        if (currentSection === 1) currentSection = 0;
       });
     });
+  }
+});
 
-    const progress = (filled / groups.length) * 100;
-    progressBar.style.width = progress + "%";
+window.addEventListener("scroll", function () {
+  let scrollTop = scrollY || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    const nome = document.getElementById("first_name").value.trim();
+    const sobrenome = document.getElementById("last_name").value.trim();
+    const telefone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    const campoNome = document.getElementById("erroNome");
+    const campoSobrenome = document.getElementById("errosobreNome");
+    const campoTelefone = document.getElementById("telefone");
+    const campoEmail = document.getElementById("erroEmail");
+
+    let bloquearScroll = false;
+
+    // Nome
+    if (nome === "") {
+      campoNome.style.display = 'block';
+      campoNome.innerHTML = "⚠ Preencha este campo";
+      bloquearScroll = true;
+    }
+
+    // Sobrenome
+    if (sobrenome === "") {
+      campoSobrenome.style.display = "block";
+      campoSobrenome.innerHTML = "⚠ Preencha este campo";
+      bloquearScroll = true;
+    }
+
+    // Telefone
+    if (telefone === "") {
+      campoTelefone.style.display = "block";
+      campoTelefone.style.width = "200px"
+      campoTelefone.innerHTML = "⚠ Preencha este campo";
+      bloquearScroll = true;
+    } else if (!iti.isValidNumber()) {
+      campoTelefone.style.display = "block";
+      campoTelefone.style.width = "320px"
+      campoTelefone.innerHTML = "Hmm... esse número de telefone não é válido";
+      bloquearScroll = true;
+    }
+
+    // E-mail
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    if (email === "") {
+      campoEmail.style.display = "block";
+      campoEmail.style.width = "200px"
+      campoEmail.innerHTML = "⚠ Preencha este campo";
+      bloquearScroll = true;
+    } else if (!emailRegex.test(email)) {
+      campoEmail.style.display = "block";
+      campoEmail.style.width = "320px"
+      campoEmail.innerHTML = "Hmm... esse e-mail não é válido";
+      bloquearScroll = true;
+    }
+
+    // Bloquear rolagem
+    if (bloquearScroll) {
+      document.getElementById('nx3').style.display = "none";
+      document.body.style.overflow = "auto";
+    }
   }
 
-  // Escuta todos os inputs dentro de todos os grupos
-  groups.forEach((group) => {
-    const inputs = group.querySelectorAll("input, select, textarea");
-    inputs.forEach((input) => {
-      input.addEventListener("input", updateProgress);
-    });
-  });
-
-  // NOVO: escutar botões dentro dos <li> que preenchem inputs
-  // Escutar botões dentro dos <li> que preenchem inputs
-  const botoes = form.querySelectorAll("li button");
-  botoes.forEach((button) => {
-    button.addEventListener("click", function () {
-      const valor = this.value || this.innerText;
-      const input = this.closest(".input-group").querySelector("input");
-
-      if (input) {
-        // Se o input já tem o mesmo valor do botão → desmarcar
-        if (input.value === valor) {
-          input.value = ""; // limpa o input
-        } else {
-          input.value = valor; // define novo valor
-        }
-
-        updateProgress(); // força atualização da barra
-      }
-    });
-  });
+  lastScrollTop = scrollTop;
 });
-//
 
 
-
- window.addEventListener("scroll", function () {
-    let scrollTop = scrollY || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-
-        let valido = true;
-        const nome = document.getElementById("first_name").value;
-        const campo =  document.getElementById("erroNome")
-        const campo01 = document.getElementById("errosobreNome");
-        const sobrenome = document.getElementById("last_name").value;
-        const telefone = document.getElementById("phone").value;
-        const campo02 = document.getElementById("telefone");
-        const email = document.getElementById("email").value; 
-        const campo03 = document.getElementById("erroEmail");
-
-      
-        if (nome === "") {
-        campo.style.display = 'block'
-        campo.innerHTML = "\u26A0 Preencha este campo";
-            
-        }
-        if (sobrenome === "") {
-            campo01.style.display = "block"
-
-            document.getElementById("errosobreNome").innerHTML = "\u26A0 Preencha este campo";
-        }
-        if (telefone === "") {
-            campo02.style.display = "block"
-
-            document.getElementById("telefone").innerHTML = "\u26A0 Preencha este campo";
-        }
-        if (email === "") {
-            campo03.style.display = "block"
-
-            document.getElementById("erroEmail").innerHTML = "\u26A0 Preencha este campo";
-        }   
-        if (nome === "" || sobrenome === "" || telefone === "" || email === "") {
-            document.getElementById('nx3').style.display = "none";       
-            document.body.style.overflow = "auto";
-        }  
-    
-    
-    }
-        
-    lastScrollTop = scrollTop;
-}); 
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     if (arrumar === true) {
-        // Seleciona todos os campos que devem ativar o evento
-        const camposInput = document.querySelectorAll("#first_name, #last_name, #phone, #email");
+      const camposInput = document.querySelectorAll("#first_name, #last_name, #phone, #email");
 
-        camposInput.forEach(campo => {
-            campo.addEventListener("input", function() {
-                document.getElementById("erroNome").style.display = 'none';
-                document.getElementById("errosobreNome").style.display = "none";
-                document.getElementById("telefone").style.display = "none";
-                document.getElementById("erroEmail").style.display = "none";
-                
-                document.body.style.overflow = "hidden";
-                document.getElementById('nx3').style.display = "block";     
-                if (currentSection = 1){
-                    currentSection = 0;
-                }  
-             
+      camposInput.forEach(campo => {
+        campo.addEventListener("input", function () {
+          document.getElementById("erroNome").style.display = 'none';
+          document.getElementById("errosobreNome").style.display = "none";
+          document.getElementById("telefone").style.display = "none";
+          document.getElementById("erroEmail").style.display = "none";
 
-            });
+          document.body.style.overflow = "hidden";
+          document.getElementById('nx3').style.display = "block";
+
+          if (currentSection = 1) {
+            currentSection = 0;
+          }
         });
+      });
     }
-});
- 
- 
+  });
 
 
 //   ROLAGEM COM PAUSA E BOTAO DE ROLAGEM E  // 
@@ -211,9 +207,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalSections = sections.length;
     let isScrolling = false;
 
+//MOVIMENTO DE ROLAGEM//
+
     window.addEventListener('wheel', (event) => {
         
-
+      console.log("Rolando...");
+      
 
 
         if (isScrolling) return;
@@ -230,12 +229,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentSection--;
             }
         }
+        
+        if (currentSection === 3 || currentSection === 9) {
+         console.log("OLA PURA")
+
+          sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => {
+            isScrolling = false;
+        }, 3200); // Tempo de bloqueio da rolagem
+         return;
+        } 
+
+
         sections[currentSection].scrollIntoView({ behavior: 'smooth' });
 
         setTimeout(() => {
             isScrolling = false;
-        }, 1500); // Tempo de bloqueio da rolagem
+        }, 1600); // Tempo de bloqueio da rolagem
     });
+
+
+
 
     document.addEventListener('keydown', function(event) {
     if (event.key === "Enter") {
@@ -266,14 +280,38 @@ document.querySelectorAll(".butonok").forEach((btn) => {
         sections[currentSection].scrollIntoView({ behavior: 'smooth' });
 
     })
+    document.getElementById("btndwon1").addEventListener("click", (event) => {
+      
+        if (currentSection < totalSections - 1) {
+            currentSection++;
+            console.log("Clicou no butaodown!");
+          let buttao = document.querySelector(".buttonsetaesquerda");
+           buttao.style.opacity = "100%"
+        }
+        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
 
-
+    })
 
     document.getElementById("btnCima").addEventListener("click", (event) => {
 
         if (currentSection <= totalSections - 1) {
             currentSection--;
         }
+    
+
+        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+
+
+    })
+        document.getElementById("btnCima1").addEventListener("click", (event) => {
+
+        if (currentSection <= totalSections - 1) {
+            currentSection--;
+        }
+     if (currentSection === 0) {
+        let buttao = document.querySelector(".buttonsetaesquerda");
+        buttao.style.opacity = "0%"         
+      }
 
         sections[currentSection].scrollIntoView({ behavior: 'smooth' });
 

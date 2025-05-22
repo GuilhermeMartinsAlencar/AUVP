@@ -13,9 +13,8 @@ body {
     background-color: #113822;
     color: white;
     position: relative;
+    height: 100vh;
     overflow: hidden;
-
-
 }
 .progress-container {
     position: fixed;
@@ -57,7 +56,7 @@ input[type="text"]::placeholder {
     border: none;
     margin-left: 35px;
     position: fixed;
-   
+   z-index: 10;
 }
 
 
@@ -134,7 +133,13 @@ input {
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
 }
-
+.number9{
+    position: absolute;
+    top: 5px;
+    left: -43px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
 .number2 {
     position: absolute;
     top: 33px;
@@ -155,9 +160,9 @@ input {
 
 
 .container {
-    height: 100vh;
     transition: transform 0.8s ease-in-out;
     flex-direction: column;
+    height: 100vh;
     gap: 0;
     margin: auto;
     display: flex;
@@ -208,6 +213,8 @@ input {
     border-bottom: 1px solid #f3f5f42f;
 }
 .telefone-box input{
+    height: 50px !important;
+    background-color: #113822 !important;
     padding-left: 0px !important;
     text-align: left !important;
     width: 92% !important;
@@ -220,14 +227,15 @@ input {
     
 }
 
+.iti__search-input{
+    height: 50px !important;
+    background-color: #113822 !important;
+    padding-left: 0px !important;
+    text-align: left !important;
+    width: 92% !important;
+}
 
 
-
-@media (max-width: 480px) {
-  .iti__country-list {
-    width: 8vw; /* Ajuste para telas pequenas */
-  }
-  }
 
 
 
@@ -327,7 +335,7 @@ label {
     text-align: start;
     height: 100vh;
     display: flex;
-
+    overflow: hidden;
 
 
 }
@@ -366,7 +374,7 @@ span p {
     font-family: 'Montserrat', sans-serif;
     text-align: start;
 
-
+    
 }
 
 .inputbebida {
@@ -387,12 +395,24 @@ span p {
 
 
 
-/* TAG 3*/
+/* TAG 3 */
 
 .interesse{
-    text-align: left;
-    width: 38%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow-y: scroll; 
 }
+
+.interesseopçoes{
+    width: 100%;
+    position: relative;
+    margin-top: 300px;
+    height: 900px;
+}
+
 
 .interesse h1{
     font-family: 'Montserrat', sans-serif;
@@ -403,7 +423,7 @@ span p {
     display: none;
 }
 
-.interesse ul{
+.interesse ul{  
     padding-left: 0;
 
 }
@@ -413,10 +433,11 @@ span p {
     width: 370px;
     margin: 10px;
     position: relative;
+  
 
 
 }
-.interesse button{
+.interesse ul li button{
     height: 36px;
     width: 350px;
     background-color: #294C39;
@@ -479,195 +500,9 @@ span p {
 
 
 
-/*
-.correçao{
-    text-align: center;
-    width: 40%;
-    display: flex;
-    align-items: first baseline;
-    font-size: 22px;
-    font-family: 'Montserrat', sans-serif;
-    text-align: left;
 
 
 
-}
-
-.correçao textarea{
-    display: none;
-}
-
-
-
-
-
-.correçao p, .correçao button{
-    height: 40px;
-    margin: 4px;
-    display: flex;
-    align-items: center;
-    width: 60%;
-    background-color: #294C39;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    border: 1px whitesmoke solid;
-    border-radius: 4px;
-    margin: 10px;
-    cursor: pointer;
-    position: relative;
-    color: white;
-}
-
-
-
-
-.correçaospan{
-    height: 20px;
-    margin: 0px 6px 0px 5px;
-    display: flex;
-    align-items: center;
-    width: 20px;
-    background-color: #113822;
-    font-size: 10px;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    border: 1px whitesmoke solid;
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#listacorreçao{
-    width: 100%;
-    margin-top: 22px;
-    border-radius: 5px;
-}
-
-
-
-
-.verificaçao{
-     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
- 
-}
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.pad {
-    align-items: center;
-    padding-left: 0px;
-    margin-top: 26px;
-    justify-content: center;
-    text-align: start;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-#interesse {
-    display: flex;
-    color: white;
-    width: 38%;
-    margin: auto;
-    height: 100vh;
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
-    text-align: start;
-
-
-
-}
-
-.caixaselecionar {
-    width: 340px;
-    height: 38px;
-    background-color: #294C39;
-    border-radius: 3px;
-    border: 1px solid #BDC7C1;
-    cursor: pointer;
-    margin: 10px;
-    list-style: none;
-    position: relative;
-    transition: background-color 0.3s;
-
-
-}
-.ativo {
-    background-color: #597465;
-  }
-
-.labelA {
-    display: inline-block;
-    background-color: #113822;
-    font-size: 12px;
-    font-weight: bold;
-    margin: 5px;
-    width: 20px;
-    height: 20px;
-    border: 1px #BDC7C1 solid;
-    cursor: pointer;
-    padding-top: 3px;
-    font-family: sans-serif;
-    border-radius: 2px;
-    text-align: center;
-    
-
-
-
-
-
-}
-
-.label02 {
-    cursor: pointer;
-}
-
-
-
-input[type="checkbox"] {
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 3px;
-    position: absolute;
-    cursor: pointer;
-    right: 8px;
-    top: 5px;
-}
-
-input[type="checkbox"]:checked::after {
-    content: '✔';
-    /* O símbolo do check */
-    font-size: 18px;
-    font-weight: lighter;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 0;
-    left: 2px;
-}
 
 
 
@@ -1005,27 +840,42 @@ textarea::placeholder {
     color: #b0b0b0;
 }
 
+
+
+
+
+
+
+
 #endereço {
     color: white;
-    width: 45%;
-    margin: auto;
-    height: 100vh;
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
-    text-align: start;
-    padding: 20px;
-    text-align: start;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow-y: scroll; 
+}
+
+.endereço-width{
+    position: relative;
+    margin-top: 300px;
+    margin-bottom: 100px ;
+    height: 1200px;
+    width: 40%;
 }
 
 #endereço label {
     font-size: 20px;
 }
+
 #endereço h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     color: white;
     font-size: 24px;
-
 }
 
 #endereço input {
@@ -1041,9 +891,6 @@ textarea::placeholder {
     margin-block-end: 48px;
 }
 
-.endereçoopçoes {
-    margin-block-start: 20px;
-}
 
 .butonokenderreço {
     display: flex;
@@ -1191,7 +1038,7 @@ input::placeholder {
     height: 40px;
     border: 1px solid rgba(236, 236, 236, 0.786);
     margin: 10px 0;
-    width: 46%;
+    width: 48%;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -1272,13 +1119,61 @@ input::placeholder {
     
 }
 
+/*Quero o tamanho de tela de notebook*/
 
+.butaoOKandroid{
+    z-index: 1;
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    width: 100%;
+    background-color: #E3A749;
+    font-size: 20px;
+    border-radius: 5px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    font-weight: 700;
+    font-size: 16px;
+
+}
+
+.buttonsetaesquerda{
+    display: none;
+    opacity: 0;
+    width: 20%;
+    height: 50px;
+    background-color: #E3A749;
+    position: fixed;
+    bottom: 20px;
+    z-index: 10;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    font-size: 15px;
+
+}
+
+.containerdaimgPrincipal{
+    position: fixed;
+    top: 1px;
+    width: 100%;
+    height: 50px;
+    background-color: #113822;
+    z-index: 1;
+}
 /* ARRUMAÇOES PARA RESPONSIVIDADES */
 @media (max-width: 1340px) {
+
     p{
         font-size: 20px;
     }
+    .p01{
+        font-size: 12px;
+    }
     .n01 {
+   
     width: 500px;
     height: 100vh;  
     }
@@ -1291,6 +1186,9 @@ input::placeholder {
     .n01 label{
         font-size: 16px;
     }
+    .iti__dropdown-content{
+
+    }
     .optar{
         width: 500px;
     }
@@ -1298,6 +1196,7 @@ input::placeholder {
         font-size: 18px;
     }
     .continuarbutton{
+        height: 100dvh;
         width: 90px;
         height: 30px;
         font-size: 15px;
@@ -1306,23 +1205,7 @@ input::placeholder {
     font-size: 20px;
     width: 500px;
    }
-   .interesse{
-    width: 500px;
-   }
-   .interesse h1{
-    text-align: left;
-    font-size: 20px;
-   }
- 
-   .interesse li{
-    padding: 16px;
-    height: 20px;
-    width: 350px;
-   }    
-   .interesse li button{
-    width: 100%;
-    font-size: 16px;
-   }
+
    .hobbie{
     width: 60%;
    }
@@ -1344,15 +1227,7 @@ input::placeholder {
     .experiencia p{
         font-size: 18px;
     }
-    #endereço{
-        width: 60%;
-    }
-    #endereço h1{
-        font-size: 18px;
-    }
-    #endereço label{
-        font-size: 18px;
-    }
+   
     .medo{
         width: 60%;
     }
@@ -1365,8 +1240,322 @@ input::placeholder {
     .investidohoje{
         width: 60%;
     }   
+    .investidohoje ul li button{
+        width: 60%;
+    }
     .button01{
         background-color: red;
     }
  
+}
+@media (max-width: 540px) {
+    .buttonsetaesquerda{
+        display: block;
+    }
+    p{
+        font-size: 17px;
+    }
+    .imgauvp{
+        margin: 0%;
+        top: -30px;
+        margin-left: 10px;
+        width: 120px;
+    }
+    .p01{
+        display: none;
+    }
+    .container{
+        height: 90vh;
+        width: 100%;
+        flex-direction: row;
+    }
+    .n01{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+        
+    }
+    .n01 h1{
+        font-size: 18px;
+    }
+    .n01 label{
+        font-size: 15px;
+    }
+    .n01 input{
+        font-size: 18px;
+        line-height: 1;
+        width: 86%;
+    }
+
+
+    .number{
+        font-size: 12px;
+        left: -28px;
+    }
+    .number3{
+        left: 24px;
+        font-size: 12px;
+    }
+    .telefone-box input{
+    font-size: 18px;
+    padding-left: 0px !important;
+    text-align: left !important;
+    width: 70% !important;
+    }
+    .iti__country-list .iti__flag, .iti__country-name {
+        font-size: 15px !important;
+    }
+    .iti__dial-code{
+        font-size: 15px !important;
+    }
+    .button01{
+        display: none;
+    }
+    .button02{
+        display: none;
+    }
+    .butonok{
+        width: 100%;
+    }
+    .optar{
+        flex-direction: column;
+        width: 90%;
+    }
+    .optar span p{
+        font-size: 14px;
+    }
+    #bebida{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        margin-bottom: 400px;
+    }
+    #bebida input{
+        width: 100%;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+    .number2{
+        font-size: 12px;
+        top: 28px;
+        left: -24px;
+    }
+    .nota li button{
+        width: 50px;
+    }
+    .interesse h1{
+        margin-left: 60px;
+        justify-content: center;
+        font-size: 18px;
+        width: 80%;
+    }
+    .interesse ul li button{
+        width: 70%;
+        font-size: 12px;
+    }
+    .interesse li{
+        display: flex;
+        justify-content: center;
+    }
+    .interesse{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .butaoOKandroid{
+        display: block;
+    }
+    .apagarandroid{
+        display: none;
+    }
+    .hobbie{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+         margin-bottom: 100px;
+        height: 100vh;
+    }
+    .hobbie input{
+        width: 100%;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+    .estado{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 100px;
+        height: 100vh;
+    }
+    .estado input{
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    #buttonceta {
+        position: absolute;
+        top: 70px;
+        right: 0px;
+        background-color: transparent;
+        border: none;
+    }
+    #Butaoceta01{
+        font-size: 18px;
+    }
+
+
+    .button-li{
+        height: 40px;
+        width: 125%;
+        font-size: 15px;
+    }
+    hr{
+        width: 120%;
+    }
+    .regime{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 100px;
+        height: 100vh;
+    }
+    .regime input{
+        width: 100%;
+        font-size: 16px;
+        padding: 0;
+    }
+    #buttaoceta02 {
+        position: absolute;
+        top: 70px;
+        right: 0px;
+        background-color: transparent;
+        border: none;
+    }
+    #Butaoceta02{
+        font-size: 18px;
+    }
+    .filho{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 100px;
+        height: 100vh;
+    }
+    .filho input{
+        width: 100%;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+    .experiencia{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 100px;
+        height: 100vh;
+    }
+      .experiencia textarea{
+        padding: 0;
+        margin: 0;
+    }
+    .experiencia textarea::placeholder{
+        font-size: 16px;
+    }
+
+#endereço {
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll; 
+}
+
+.endereço-width{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-direction: column;
+    margin-bottom: 100px;
+    position: relative;
+    height: 1000px;
+    width: 82%;
+}
+
+#endereço label {
+    font-size: 15px;
+}
+
+#endereço h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    color: white;
+    font-size: 18px;
+    position: relative;
+}
+
+#endereço input {
+    width: 100%;
+    font-size: 15px;
+    margin-block-end: 28px;
+}
+#endereço input::placeholder {
+    color: #516E5D;
+    font-size: 16px;
+    text-align: left;
+}
+.number9{
+    left: -22px;
+
+    font-size: 10px;
+}
+.medo{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 100px;
+    height: 100vh;
+}
+.medo input{
+    width: 100%;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+.nota{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 100px;
+    height: 100vh;
+}
+.investidohoje{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 100px;
+    height: 100vh;
+}
+.investidohoje ul li button{
+    width: 100%;
+    font-size: 16px;
+}
 }
