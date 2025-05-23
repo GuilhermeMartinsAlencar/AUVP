@@ -8,11 +8,9 @@ function toggleMenu() {
   });
 }
 
-
 //
 
 toggleMenu();
-
 
 document
   .querySelector("#phone")
@@ -27,7 +25,7 @@ let ultimoBotao = null; // Guarda o último botão clicado
 let blinkEffect = null; // Guarda o intervalo do piscar
 let tempo = null;
 let troca = true;
-      
+
 const inputs = document.querySelectorAll('input[type="text"]');
 
 inputs.forEach((input) => {
@@ -62,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneInput = document.querySelector("#phone");
   iti = window.intlTelInput(phoneInput, {
     initialCountry: "br",
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
   });
 
   // Forçar Brasil visualmente após carregamento
@@ -73,17 +72,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Esconder erros quando o usuário começa a digitar
   if (arrumar === true) {
-    const camposInput = document.querySelectorAll("#first_name, #last_name, #phone, #email");
+    const camposInput = document.querySelectorAll(
+      "#first_name, #last_name, #phone, #email"
+    );
 
-    camposInput.forEach(campo => {
+    camposInput.forEach((campo) => {
       campo.addEventListener("input", function () {
-        document.getElementById("erroNome").style.display = 'none';
+        document.getElementById("erroNome").style.display = "none";
         document.getElementById("errosobreNome").style.display = "none";
         document.getElementById("telefone").style.display = "none";
         document.getElementById("erroEmail").style.display = "none";
 
         document.body.style.overflow = "hidden";
-        document.getElementById('nx3').style.display = "block";
+        document.getElementById("nx3").style.display = "block";
 
         if (currentSection === 1) currentSection = 0;
       });
@@ -108,7 +109,7 @@ window.addEventListener("scroll", function () {
 
     // Nome
     if (nome === "") {
-      campoNome.style.display = 'block';
+      campoNome.style.display = "block";
       campoNome.innerHTML = "⚠ Preencha este campo";
       bloquearScroll = true;
     }
@@ -123,12 +124,12 @@ window.addEventListener("scroll", function () {
     // Telefone
     if (telefone === "") {
       campoTelefone.style.display = "block";
-      campoTelefone.style.width = "200px"
+      campoTelefone.style.width = "200px";
       campoTelefone.innerHTML = "⚠ Preencha este campo";
       bloquearScroll = true;
     } else if (!iti.isValidNumber()) {
       campoTelefone.style.display = "block";
-      campoTelefone.style.width = "320px"
+      campoTelefone.style.width = "320px";
       campoTelefone.innerHTML = "Hmm... esse número de telefone não é válido";
       bloquearScroll = true;
     }
@@ -137,19 +138,19 @@ window.addEventListener("scroll", function () {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (email === "") {
       campoEmail.style.display = "block";
-      campoEmail.style.width = "200px"
+      campoEmail.style.width = "200px";
       campoEmail.innerHTML = "⚠ Preencha este campo";
       bloquearScroll = true;
     } else if (!emailRegex.test(email)) {
       campoEmail.style.display = "block";
-      campoEmail.style.width = "320px"
+      campoEmail.style.width = "320px";
       campoEmail.innerHTML = "Hmm... esse e-mail não é válido";
       bloquearScroll = true;
     }
 
     // Bloquear rolagem
     if (bloquearScroll) {
-      document.getElementById('nx3').style.display = "none";
+      document.getElementById("nx3").style.display = "none";
       document.body.style.overflow = "auto";
     }
   }
@@ -157,168 +158,161 @@ window.addEventListener("scroll", function () {
   lastScrollTop = scrollTop;
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  if (arrumar === true) {
+    const camposInput = document.querySelectorAll(
+      "#first_name, #last_name, #phone, #email"
+    );
 
-  document.addEventListener("DOMContentLoaded", function () {
-    if (arrumar === true) {
-      const camposInput = document.querySelectorAll("#first_name, #last_name, #phone, #email");
+    camposInput.forEach((campo) => {
+      campo.addEventListener("input", function () {
+        document.getElementById("erroNome").style.display = "none";
+        document.getElementById("errosobreNome").style.display = "none";
+        document.getElementById("telefone").style.display = "none";
+        document.getElementById("erroEmail").style.display = "none";
 
-      camposInput.forEach(campo => {
-        campo.addEventListener("input", function () {
-          document.getElementById("erroNome").style.display = 'none';
-          document.getElementById("errosobreNome").style.display = "none";
-          document.getElementById("telefone").style.display = "none";
-          document.getElementById("erroEmail").style.display = "none";
+        document.body.style.overflow = "hidden";
+        document.getElementById("nx3").style.display = "block";
 
-          document.body.style.overflow = "hidden";
-          document.getElementById('nx3').style.display = "block";
-
-          if (currentSection = 1) {
-            currentSection = 0;
-          }
-        });
+        if ((currentSection = 1)) {
+          currentSection = 0;
+        }
       });
-    }
-  });
+    });
+  }
+});
 
+//   ROLAGEM COM PAUSA E BOTAO DE ROLAGEM E  //
 
-//   ROLAGEM COM PAUSA E BOTAO DE ROLAGEM E  // 
-
-
-
-
-
-
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
 }
 
 window.onload = function () {
   window.scrollTo(0, 0);
 };
 
-
 console.log("Aguarde...");
 
 document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll('.container');
+  const sections = document.querySelectorAll(".container");
 
-    console.log("Seções encontradas:", sections);
+  console.log("Seções encontradas:", sections);
 
-    const totalSections = sections.length;
-    let isScrolling = false;
+  const totalSections = sections.length;
+  let isScrolling = false;
 
-//MOVIMENTO DE ROLAGEM//
+  //MOVIMENTO DE ROLAGEM//
 
-    window.addEventListener('wheel', (event) => {
-        
-      console.log("Rolando...");
-      
+  window.addEventListener("wheel", (event) => {
+    console.log("Rolando...");
 
+    if (isScrolling) return;
+    isScrolling = true;
 
-        if (isScrolling) return;
-        isScrolling = true;
-
-        if (event.deltaY > 0) {
-            // Rolando para baixo
-            if (currentSection < totalSections - 1) {
-                currentSection++;
-            }
-        } else {
-            // Rolando para cima
-            if (currentSection > 0) {
-                currentSection--;
-            }
-        }
-        
-        if (currentSection === 3 || currentSection === 9) {
-         console.log("OLA PURA")
-
-          sections[currentSection].scrollIntoView({ behavior: 'smooth' });
-          setTimeout(() => {
-            isScrolling = false;
-        }, 3200); // Tempo de bloqueio da rolagem
-         return;
-        } 
-
-
-        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
-
-        setTimeout(() => {
-            isScrolling = false;
-        }, 1600); // Tempo de bloqueio da rolagem
-    });
-
-
-
-
-    document.addEventListener('keydown', function(event) {
-    if (event.key === "Enter") {
-        if (currentSection < totalSections - 1) {
-            currentSection++;
-        }
-
-        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+    if (event.deltaY > 0) {
+      // Rolando para baixo
+      if (currentSection < totalSections - 1) {
+        currentSection++;
+      }
+    } else {
+      // Rolando para cima
+      if (currentSection > 0) {
+        currentSection--;
+      }
     }
-});
-document.querySelectorAll(".butonok").forEach((btn) => {
-    btn.addEventListener("click", () => {
-        console.log("ola");
 
-        if (currentSection < totalSections - 1) {
-            currentSection++;
-        }
+    if (currentSection === 3 || currentSection === 9) {
+      console.log("OLA PURA");
 
-        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
-    });
-});
-    document.getElementById("btndwon").addEventListener("click", (event) => {
+      sections[currentSection].scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        isScrolling = false;
+      }, 3200); // Tempo de bloqueio da rolagem
+      return;
+    }
 
-        if (currentSection < totalSections - 1) {
-            currentSection++;
-        }
+    sections[currentSection].scrollIntoView({ behavior: "smooth" });
 
-        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      isScrolling = false;
+    }, 1600); // Tempo de bloqueio da rolagem
+  });
 
-    })
-    document.getElementById("btndwon1").addEventListener("click", (event) => {
-      
-        if (currentSection < totalSections - 1) {
-            currentSection++;
-            console.log("Clicou no butaodown!");
-          let buttao = document.querySelector(".buttonsetaesquerda");
-           buttao.style.opacity = "100%"
-        }
-        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
-
-    })
-
-    document.getElementById("btnCima").addEventListener("click", (event) => {
-
-        if (currentSection <= totalSections - 1) {
-            currentSection--;
-        }
-    
-
-        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
-
-
-    })
-        document.getElementById("btnCima1").addEventListener("click", (event) => {
-
-        if (currentSection <= totalSections - 1) {
-            currentSection--;
-        }
-     if (currentSection === 0) {
-        let buttao = document.querySelector(".buttonsetaesquerda");
-        buttao.style.opacity = "0%"         
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      if (currentSection < totalSections - 1) {
+        currentSection++;
       }
 
-        sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+      sections[currentSection].scrollIntoView({ behavior: "smooth" });
+    }
+  });
+  document.querySelectorAll(".butonok").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      console.log("ola");
 
+      if (currentSection < totalSections - 1) {
+        currentSection++;
+      }
 
-    })
-}); 
-   
+      sections[currentSection].scrollIntoView({ behavior: "smooth" });
+    });
+  });
+  document.getElementById("btndwon").addEventListener("click", (event) => {
+    if (currentSection < totalSections - 1) {
+      currentSection++;
+    }
+
+    sections[currentSection].scrollIntoView({ behavior: "smooth" });
+  });
+  document.getElementById("btndwon1").addEventListener("click", (event) => {
+    if (currentSection < totalSections - 1) {
+      currentSection++;
+      console.log("Clicou no butaodown!");
+      let buttao1 = document.querySelector(".buttonsetaesquerda");
+      buttao1.style.opacity = "100%";
+      let buttao = document.querySelector(".butaoOKandroid");
+      buttao.style.width = "70%";
+    }
+    if (currentSection === 1) {
+      let buttao = document.querySelector(".butaoOKandroid");
+      buttao.innerHTML = "Continuar";
+    }
+    if (currentSection === 2) {
+      let buttao = document.querySelector(".butaoOKandroid");
+      buttao.innerHTML = "OK";
+    }
+
+    sections[currentSection].scrollIntoView({ behavior: "smooth" });
+  });
+
+  document.getElementById("btnCima").addEventListener("click", (event) => {
+    if (currentSection <= totalSections - 1) {
+      currentSection--;
+    }
+
+    sections[currentSection].scrollIntoView({ behavior: "smooth" });
+  });
+  document.getElementById("btnCima1").addEventListener("click", (event) => {
+    if (currentSection <= totalSections - 1) {
+      currentSection--;
+    }
+    if (currentSection === 0) {
+      let buttao = document.querySelector(".buttonsetaesquerda");
+      buttao.style.opacity = "0%";
+      let buttao1 = document.querySelector(".butaoOKandroid");
+      buttao1.innerHTML = "OK";
+      buttao1.style.width = "100%";
+    }
+    if (currentSection === 1) {
+      let buttao = document.querySelector(".butaoOKandroid");
+      buttao.innerHTML = "Continuar";
+    }
+
+    sections[currentSection].scrollIntoView({ behavior: "smooth" });
+  });
+});
 
 // TAG NUMERO
 
@@ -648,8 +642,6 @@ inputok.addEventListener("click", function () {
   inputok.style.display = "none";
 });
 
-
-
 // TAG 12
 
 function taglast(event) {
@@ -670,7 +662,6 @@ function taglast(event) {
   let checkSpan = button.querySelector(".verificaçao");
 
   console.log(button);
-  
 
   checkSpan.textContent = "\u2713";
 
