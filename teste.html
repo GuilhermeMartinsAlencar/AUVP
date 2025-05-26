@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .botoesFixos {
-  position: fixed;
-  bottom: 20px;
-  left: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  z-index: 9999;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-.botao1, .botao2 {
-  flex: 1;
-  height: 50px;
-  background-color: #E3A749;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-}
+    <style>
+      body {
+        background-color: aqua;
+      }
+      .botoesFixos {
+        position: fixed;
+        bottom: 20px;
+        left: 10px;
+        right: 10px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        z-index: 9999;
+      }
 
-  </style>
-</head>
-<body>
-  <div class="botoesFixos">
-  <button class="botao1">Botão 1</button>
-  <button class="botao2">Botão 2</button>
-</div>
+      .botao1,
+      .botao2 {
+        flex: 1;
+        height: 50px;
+        background-color: #e3a749;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .branco {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="botoesFixos">
+      <button class="botao1">Botão 1</button>
+      <button class="botao2">Botão 2</button>
+    </div>
 
-</body>
+    <!-- Exemplo de seta -->
+    <i class="fa-solid fa-arrow-right branco"></i>
+  </body>
 </html>
