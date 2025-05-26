@@ -279,6 +279,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let buttao = document.querySelector(".butaoOKandroid");
       buttao.innerHTML = "Continuar";
     }
+
     if (currentSection === 2) {
       let buttao = document.querySelector(".butaoOKandroid");
       buttao.innerHTML = "OK";
